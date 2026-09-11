@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="杨霄日本求职材料资料补充表">
+  <title data-zh="杨霄｜资料补充表" data-ja="楊霄｜情報補足フォーム">杨霄｜资料补充表</title>
+  <style>
+    :root{--ink:#171717;--muted:#656565;--line:#c9c9c4;--soft:#f3f3f0;--paper:#fff;--accent:#111;--ok:#315f45;--shadow:0 18px 50px rgba(0,0,0,.08)}
+    *{box-sizing:border-box}
+    html{background:#e9e9e5;scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:#e9e9e5;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP",Arial,sans-serif;line-height:1.65}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .shell{max-width:1080px;margin:0 auto;padding:24px 18px 80px}
+    .masthead{position:relative;overflow:hidden;padding:34px clamp(24px,5vw,64px) 30px;background:var(--ink);color:#fff;box-shadow:var(--shadow)}
+    .masthead:after{content:"";position:absolute;width:260px;height:260px;right:-80px;top:-160px;border:1px solid rgba(255,255,255,.3);border-radius:50%}
+    .kicker{font-family:"Apple Chancery","Bradley Hand","Klee One",cursive;font-size:13px;letter-spacing:.16em;color:#cfcfca;text-transform:uppercase}
+    h1,h2,h3{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;font-weight:700;line-height:1.25}
+    h1{margin:12px 0 8px;font-size:clamp(28px,5vw,46px);letter-spacing:.08em}
+    .masthead p{max-width:740px;margin:0;color:#d8d8d3;font-size:14px}
+    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .lang-switch{display:flex;gap:4px;padding:3px;border:1px solid rgba(255,255,255,.35);border-radius:999px}
+    .lang-switch button{border:0;border-radius:999px;padding:6px 15px;background:transparent;color:#ddd;font-size:13px}
+    .lang-switch button.active{background:#fff;color:#111}
+    .privacy{display:flex;gap:12px;align-items:flex-start;margin:20px 0;padding:16px 18px;border:1px solid #bdbdb8;background:#fff;color:#373737;box-shadow:0 5px 20px rgba(0,0,0,.04)}
+    .privacy strong{display:block;margin-bottom:2px}
+    .privacy-mark{display:grid;place-items:center;flex:0 0 28px;height:28px;border:1px solid #777;border-radius:50%;font-family:Georgia,serif;font-weight:700}
+    .progress-wrap{display:flex;align-items:center;gap:12px;margin:18px 0 24px;color:var(--muted);font-size:13px}
+    .progress{height:6px;flex:1;background:#d5d5d0;border-radius:999px;overflow:hidden}
+    .progress i{display:block;width:0;height:100%;background:#222;transition:width .2s ease}
+    form{display:grid;gap:18px}
+    .form-section{padding:24px clamp(18px,4vw,36px);background:var(--paper);border:1px solid #d0d0cb;box-shadow:0 6px 20px rgba(0,0,0,.035)}
+    .section-head{display:flex;align-items:baseline;gap:12px;justify-content:space-between;margin-bottom:18px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+    .section-head h2{margin:0;font-size:23px;letter-spacing:.06em}
+    .section-number{font-family:Georgia,serif;color:#777;font-size:13px}
+    .section-desc{margin:-8px 0 18px;color:var(--muted);font-size:13px}
+    .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px}
+    .field{min-width:0}
+    .field.full{grid-column:1/-1}
+    .field label{display:block;margin-bottom:6px;font-size:14px;font-weight:700}
+    .field label em{font-size:11px;font-weight:400;color:#777;font-style:normal;margin-left:6px}
+    .field input,.field select,.field textarea{width:100%;border:1px solid #a9a9a4;border-radius:2px;background:#fff;color:var(--ink);padding:10px 12px;outline:0;transition:border-color .15s,box-shadow .15s}
+    .field input,.field select{min-height:42px}
+    .field textarea{min-height:92px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:#111;box-shadow:0 0 0 3px rgba(0,0,0,.08)}
+    .hint{margin:6px 0 0;color:#777;font-size:12px}
+    .checks{display:flex;flex-wrap:wrap;gap:8px}
+    .check{position:relative}
+    .check input{position:absolute;opacity:0;pointer-events:none}
+    .check span{display:block;padding:8px 12px;border:1px solid #aaa;border-radius:999px;color:#444;font-size:13px;transition:.15s}
+    .check input:checked+span{background:#171717;border-color:#171717;color:#fff}
+    .actions{position:sticky;bottom:14px;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:4px;padding:12px 14px;background:rgba(255,255,255,.94);border:1px solid #bdbdb8;box-shadow:0 10px 30px rgba(0,0,0,.12);backdrop-filter:blur(10px)}
+    .action-group{display:flex;gap:8px;flex-wrap:wrap}
+    .actions button{border:1px solid #222;border-radius:2px;padding:10px 15px;background:#fff;color:#111;font-weight:700;font-size:13px}
+    .actions .primary{background:#111;color:#fff}
+    .actions .danger{border-color:#aaa;color:#555;font-weight:400}
+    #status{color:var(--ok);font-size:12px;min-height:1.4em}
+    footer{margin-top:20px;color:#777;font-size:12px;text-align:center}
+    .print-only{display:none}
+    @media(max-width:700px){
+      .shell{padding:10px 10px 60px}.masthead{padding:28px 22px 24px}.masthead p{font-size:13px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.form-section{padding:20px 16px}.section-head h2{font-size:20px}.actions{bottom:8px}.actions #status{flex-basis:100%;order:-1}
+    }
+    @media print{
+      html,body{background:#fff}.shell{max-width:none;padding:0}.masthead{box-shadow:none}.privacy,.progress-wrap,.actions,footer{display:none}.form-section{box-shadow:none;break-inside:avoid}.print-only{display:block}
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <div class="kicker">RESUME INTAKE / FIELD ENGINEER</div>
+      <h1 data-zh="杨霄｜资料补充表" data-ja="楊霄｜情報補足フォーム">杨霄｜资料补充表</h1>
+      <p data-zh="请补充现有履历中尚未明确的事实。每一项都可以写“无”或“待确认”，不要为了完整而猜测。"
+         data-ja="既存の応募書類で未確認の事実を補足するフォームです。不明な項目は「なし」「要確認」と記入し、推測で埋めないでください。">请补充现有履历中尚未明确的事实。每一项都可以写“无”或“待确认”，不要为了完整而猜测。</p>
+      <div class="toolbar">
+        <div class="lang-switch" aria-label="Language">
+          <button type="button" data-lang="zh" class="active">中文</button>
+          <button type="button" data-lang="ja">日本語</button>
+        </div>
+        <span data-zh="静态页面・无需登录" data-ja="静的ページ・ログイン不要">静态页面・无需登录</span>
+      </div>
+    </header>
+
+    <aside class="privacy">
+      <div class="privacy-mark">✓</div>
+      <div>
+        <strong data-zh="隐私提示" data-ja="プライバシー">隐私提示</strong>
+        <span data-zh="本页面不连接数据库，也不会把填写内容发送到 GitHub。内容只保存在当前浏览器，可随时导出或清除。"
+              data-ja="このページはデータベースに接続せず、入力内容を GitHub に送信しません。内容はこのブラウザにのみ保存され、いつでも出力・消去できます。">本页面不连接数据库，也不会把填写内容发送到 GitHub。内容只保存在当前浏览器，可随时导出或清除。</span>
+      </div>
+    </aside>
+
+    <div class="progress-wrap">
+      <span data-zh="完成度" data-ja="入力進捗">完成度</span>
+      <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+      <strong id="progressText">0%</strong>
+    </div>
+
+    <form id="intakeForm">
+      <section class="form-section" data-section-title-zh="基本信息" data-section-title-ja="基本情報">
+        <div class="section-head"><h2 data-zh="基本信息" data-ja="基本情報">基本信息</h2><span class="section-number">01</span></div>
+        <p class="section-desc" data-zh="确认履历首页最重要的定位和联系信息。" data-ja="応募書類の第一印象に関わる基本情報を確認します。">确认履历首页最重要的定位和联系信息。</p>
+        <div class="fields">
+          <div class="field" data-field="full_name" data-label-zh="姓名" data-label-ja="氏名"><label><span data-zh="姓名" data-ja="氏名">姓名</span><em>必填</em></label><input name="full_name" type="text" autocomplete="name" data-placeholder-zh="例如：杨霄" data-placeholder-ja="例：楊霄" placeholder="例如：杨霄"></div>
+          <div class="field" data-field="target_role" data-label-zh="目标职位" data-label-ja="希望職種"><label><span data-zh="目标职位" data-ja="希望職種">目标职位</span></label><input name="target_role" type="text" data-placeholder-zh="例如：现场工程师 / Field Engineer" data-placeholder-ja="例：フィールドエンジニア" placeholder="例如：现场工程师 / Field Engineer"></div>
+          <div class="field" data-field="current_city" data-label-zh="当前所在地" data-label-ja="現住所"><label><span data-zh="当前所在地" data-ja="現住所">当前所在地</span></label><input name="current_city" type="text" data-placeholder-zh="城市、国家即可" data-placeholder-ja="市区・国名で可" placeholder="城市、国家即可"></div>
+          <div class="field" data-field="japanese_level" data-label-zh="日语及现场沟通水平" data-label-ja="日本語・現場コミュニケーション"><label><span data-zh="日语及现场沟通水平" data-ja="日本語・現場コミュニケーション">日语及现场沟通水平</span></label><select name="japanese_level"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="N2" data-zh="JLPT N2" data-ja="JLPT N2">JLPT N2</option><option value="business" data-zh="可参加工作会议、汇报和故障沟通" data-ja="業務会議・報告・不具合連絡が可能">可参加工作会议、汇报和故障沟通</option><option value="daily" data-zh="日常交流为主" data-ja="日常会話が中心">日常交流为主</option><option value="other" data-zh="其他 / 待确认" data-ja="その他 / 要確認">其他 / 待确认</option></select></div>
+          <div class="field" data-field="contact_email" data-label-zh="联系邮箱（可选）" data-label-ja="連絡先メール（任意）"><label><span data-zh="联系邮箱（可选）" data-ja="連絡先メール（任意）">联系邮箱（可选）</span></label><input name="contact_email" type="email" autocomplete="email" placeholder="name@example.com"></div>
+          <div class="field full" data-field="employment_relation" data-label-zh="所属公司与客户现场的关系" data-label-ja="所属会社と顧客現場の関係"><label><span data-zh="所属公司与客户现场的关系" data-ja="所属会社と顧客現場の関係">所属公司与客户现场的关系</span></label><textarea name="employment_relation" data-placeholder-zh="例如：本人属于哪家公司；在哪个客户工厂、以什么项目身份工作；是否直接雇佣。" data-placeholder-ja="例：所属会社、顧客工場、プロジェクト上の立場、直接雇用かどうか。" placeholder="例如：本人属于哪家公司；在哪个客户工厂、以什么项目身份工作；是否直接雇佣。"></textarea></div>
+        </div>
+      </section>
+
+      <section class="form-section" data-section-title-zh="在留与求职条件" data-section-title-ja="在留資格・応募条件">
+        <div class="section-head"><h2 data-zh="在留与求职条件" data-ja="在留資格・応募条件">在留与求职条件</h2><span class="section-number">02</span></div>
+        <p class="section-desc" data-zh="这些信息决定日本招聘方是否能判断入职时间和签证安排。" data-ja="入社時期や在留資格の確認に必要な情報です。">这些信息决定日本招聘方是否能判断入职时间和签证安排。</p>
+        <div class="fields">
+          <div class="field" data-field="residence_status" data-label-zh="目前在留 / 签证状态" data-label-ja="現在の在留資格"><label><span data-zh="目前在留 / 签证状态" data-ja="現在の在留資格">目前在留 / 签证状态</span></label><select name="residence_status"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="china" data-zh="目前在中国，尚无日本在留资格" data-ja="現在中国、日本の在留資格なし">目前在中国，尚无日本在留资格</option><option value="has_status" data-zh="已有日本在留资格" data-ja="日本の在留資格あり">已有日本在留资格</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
+          <div class="field" data-field="sponsorship" data-label-zh="是否需要公司协助签证" data-label-ja="会社のビザ支援"><label><span data-zh="是否需要公司协助签证" data-ja="会社のビザ支援">是否需要公司协助签证</span></label><select name="sponsorship"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="需要" data-ja="必要">需要</option><option value="no" data-zh="不需要" data-ja="不要">不需要</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
+          <div class="field" data-field="available_date" data-label-zh="可入职 / 可赴日时间" data-label-ja="入社・渡日可能時期"><label><span data-zh="可入职 / 可赴日时间" data-ja="入社・渡日可能時期">可入职 / 可赴日时间</span></label><input name="available_date" type="text" data-placeholder-zh="例如：拿到签证后 1 个月内" data-placeholder-ja="例：ビザ取得後1か月以内" placeholder="例如：拿到签证后 1 个月内"></div>
+          <div class="field" data-field="preferred_location" data-label-zh="希望工作地点" data-label-ja="希望勤務地"><label><span data-zh="希望工作地点" data-ja="希望勤務地">希望工作地点</span></label><input name="preferred_location" type="text" data-placeholder-zh="例如：关东、关西、全国可" data-placeholder-ja="例：関東、関西、全国可" placeholder="例如：关东、关西、全国可"></div>
+          <div class="field" data-field="travel_availability" data-label-zh="出差 / 长期驻场意愿" data-label-ja="出張・長期出張"><label><span data-zh="出差 / 长期驻场意愿" data-ja="出張・長期出張">出差 / 长期驻场意愿</span></label><select name="travel_availability"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="可以" data-ja="可">可以</option><option value="limited" data-zh="有限制，需要说明" data-ja="条件あり、要相談">有限制，需要说明</option><option value="no" data-zh="不可以" data-ja="不可">不可以</option></select></div>
+          <div class="field" data-field="long_term" data-label-zh="是否希望长期在日本工作" data-label-ja="日本での長期就業意向"><label><span data-zh="是否希望长期在日本工作" data-ja="日本での長期就業意向">是否希望长期在日本工作</span></label><select name="long_term"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="是" data-ja="はい">是</option><option value="no" data-zh="否" data-ja="いいえ">否</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
+        </div>
+      </section>
+
+      <section class="form-section" data-section-title-zh="技术栈与故障处理" data-section-title-ja="技術スキル・トラブル対応">
+        <div class="section-head"><h2 data-zh="技术栈与故障处理" data-ja="技術スキル・トラブル対応">技术栈与故障处理</h2><span class="section-number">03</span></div>
+        <p class="section-desc" data-zh="只填写真实做过、能在面试中解释的内容；可以写熟练程度和使用年数。" data-ja="実際に経験し、面接で説明できる内容だけを記入してください。経験年数や習熟度も記載できます。">只填写真实做过、能在面试中解释的内容；可以写熟练程度和使用年数。</p>
+        <div class="fields">
+          <div class="field full" data-field="equipment" data-label-zh="设备 / 产品类型" data-label-ja="設備・製品"><label><span data-zh="设备 / 产品类型" data-ja="設備・製品">设备 / 产品类型</span></label><textarea name="equipment" data-placeholder-zh="例如：露光装置、真空蒸镀装置、锂电池薄膜设备、涂布设备；品牌、型号、数量。" data-placeholder-ja="例：露光装置、真空蒸着装置、リチウム電池フィルム設備、塗工設備。メーカー・型式・台数。" placeholder="例如：露光装置、真空蒸镀装置、锂电池薄膜设备、涂布设备；品牌、型号、数量。"></textarea></div>
+          <div class="field" data-field="processes" data-label-zh="做过的工艺流程" data-label-ja="対応工程"><label><span data-zh="做过的工艺流程" data-ja="対応工程">做过的工艺流程</span></label><textarea name="processes" data-placeholder-zh="搬入、组装、据付、找平、定位、调试、试运行、联动测试、交付等。" data-placeholder-ja="搬入、組立、据付、芯出し、レベル調整、調整、試運転、連動試験、引渡しなど。" placeholder="搬入、组装、据付、找平、定位、调试、试运行、联动测试、交付等。"></textarea></div>
+          <div class="field" data-field="drawings" data-label-zh="图纸与精度调整" data-label-ja="図面・精度調整"><label><span data-zh="图纸与精度调整" data-ja="図面・精度調整">图纸与精度调整</span></label><textarea name="drawings" data-placeholder-zh="机械图、装配图、配管图、电气图；水平、位置、间隙、精度确认等。" data-placeholder-ja="機械図・組立図・配管図・電気図、レベル・位置・クリアランス・精度確認など。" placeholder="机械图、装配图、配管图、电气图；水平、位置、间隙、精度确认等。"></textarea></div>
+          <div class="field" data-field="instruments" data-label-zh="测量与诊断工具" data-label-ja="測定・診断工具"><label><span data-zh="测量与诊断工具" data-ja="測定・診断工具">测量与诊断工具</span></label><textarea name="instruments" data-placeholder-zh="例如：万用表、示波器、水平仪、激光测量器、扭力工具；分别做到什么程度。" data-placeholder-ja="例：テスター、オシロスコープ、水平器、レーザー測定器、トルク工具など。" placeholder="例如：万用表、示波器、水平仪、激光测量器、扭力工具；分别做到什么程度。"></textarea></div>
+          <div class="field" data-field="electrical" data-label-zh="电气 / 控制相关" data-label-ja="電気・制御関連"><label><span data-zh="电气 / 控制相关" data-ja="電気・制御関連">电气 / 控制相关</span></label><textarea name="electrical" data-placeholder-zh="是否做过接线、I/O Check、传感器、联动信号、PLC 周边、真空系统等。" data-placeholder-ja="配線、I/Oチェック、センサー、連動信号、PLC周辺、真空系などの経験。" placeholder="是否做过接线、I/O Check、传感器、联动信号、PLC 周边、真空系统等。"></textarea></div>
+          <div class="field" data-field="troubleshooting" data-label-zh="典型故障案例" data-label-ja="代表的なトラブル対応"><label><span data-zh="典型故障案例" data-ja="代表的なトラブル対応">典型故障案例</span></label><textarea name="troubleshooting" data-placeholder-zh="现象 → 如何切分原因 → 使用什么工具 → 更换/修复什么 → 结果。至少写 1～2 个。" data-placeholder-ja="現象 → 原因切り分け → 使用工具 → 修理・交換 → 結果。1～2件以上。" placeholder="现象 → 如何切分原因 → 使用什么工具 → 更换/修复什么 → 结果。至少写 1～2 个。"></textarea></div>
+          <div class="field full" data-field="tools_software" data-label-zh="软件、工具与其他技能" data-label-ja="ソフト・その他のスキル"><label><span data-zh="软件、工具与其他技能" data-ja="ソフト・その他のスキル">软件、工具与其他技能</span></label><textarea name="tools_software" data-placeholder-zh="CAD、Excel、作业记录系统、照片记录、报告书编写等。不会的可以写无。" data-placeholder-ja="CAD、Excel、作業記録システム、写真記録、報告書作成など。未経験は「なし」で可。" placeholder="CAD、Excel、作业记录系统、照片记录、报告书编写等。不会的可以写无。"></textarea></div>
+        </div>
+      </section>
+
+      <section class="form-section" data-section-title-zh="项目规模与现场管理" data-section-title-ja="プロジェクト規模・現場管理">
+        <div class="section-head"><h2 data-zh="项目规模与现场管理" data-ja="プロジェクト規模・現場管理">项目规模与现场管理</h2><span class="section-number">04</span></div>
+        <p class="section-desc" data-zh="数字会显著增强经验型工程师的可信度；不确定就写大致范围。" data-ja="経験者としての説得力を高める項目です。正確な数字が難しければ概数で記入してください。">数字会显著增强经验型工程师的可信度；不确定就写大致范围。</p>
+        <div class="fields">
+          <div class="field" data-field="equipment_count" data-label-zh="参与过的设备数量" data-label-ja="担当設備台数"><label><span data-zh="参与过的设备数量" data-ja="担当設備台数">参与过的设备数量</span></label><input name="equipment_count" type="text" data-placeholder-zh="例如：累计 10 台以上 / 待确认" data-placeholder-ja="例：累計10台以上 / 要確認" placeholder="例如：累计 10 台以上 / 待确认"></div>
+          <div class="field" data-field="project_duration" data-label-zh="最长项目周期" data-label-ja="最長プロジェクト期間"><label><span data-zh="最长项目周期" data-ja="最長プロジェクト期間">最长项目周期</span></label><input name="project_duration" type="text" data-placeholder-zh="例如：6 个月 / 1 年" data-placeholder-ja="例：6か月 / 1年" placeholder="例如：6 个月 / 1 年"></div>
+          <div class="field" data-field="team_size" data-label-zh="协力公司或团队人数" data-label-ja="協力会社・チーム人数"><label><span data-zh="协力公司或团队人数" data-ja="協力会社・チーム人数">协力公司或团队人数</span></label><input name="team_size" type="text" data-placeholder-zh="例如：指导 5 名协力人员" data-placeholder-ja="例：協力会社5名を指導" placeholder="例如：指导 5 名协力人员"></div>
+          <div class="field" data-field="line_scale" data-label-zh="最大生产线 / 项目规模" data-label-ja="最大ライン・規模"><label><span data-zh="最大生产线 / 项目规模" data-ja="最大ライン・規模">最大生产线 / 项目规模</span></label><input name="line_scale" type="text" data-placeholder-zh="设备数量、产线长度、客户工厂规模等" data-placeholder-ja="設備数、ライン長、顧客工場規模など" placeholder="设备数量、产线长度、客户工厂规模等"></div>
+          <div class="field full" data-field="management" data-label-zh="现场管理职责" data-label-ja="現場管理の担当範囲"><label><span data-zh="现场管理职责" data-ja="現場管理の担当範囲">现场管理职责</span></label><textarea name="management" data-placeholder-zh="作业指示、进度、安全、质量、客户汇报、协力公司协调、验收交付中实际负责哪些。" data-placeholder-ja="作業指示、進捗、安全、品質、顧客報告、協力会社調整、検収・引渡しの担当範囲。" placeholder="作业指示、进度、安全、质量、客户汇报、协力公司协调、验收交付中实际负责哪些。"></textarea></div>
+          <div class="field full" data-field="achievement" data-label-zh="最能体现能力的项目成果" data-label-ja="能力を示せる実績"><label><span data-zh="最能体现能力的项目成果" data-ja="能力を示せる実績">最能体现能力的项目成果</span></label><textarea name="achievement" data-placeholder-zh="例如：提前完成启动、解决关键故障、完成客户验收、降低返工等。" data-placeholder-ja="例：立上げ短縮、重大不具合解決、顧客検収完了、手戻り削減など。" placeholder="例如：提前完成启动、解决关键故障、完成客户验收、降低返工等。"></textarea></div>
+        </div>
+      </section>
+
+      <section class="form-section" data-section-title-zh="沟通与职业时间线" data-section-title-ja="コミュニケーション・職歴">
+        <div class="section-head"><h2 data-zh="沟通与职业时间线" data-ja="コミュニケーション・職歴">沟通与职业时间线</h2><span class="section-number">05</span></div>
+        <p class="section-desc" data-zh="用于把早期电子维修经验和后期设备工程经验连成一条可信的职业轨迹。" data-ja="初期の電子機器サービス経験から設備エンジニアへの流れを明確にします。">用于把早期电子维修经验和后期设备工程经验连成一条可信的职业轨迹。</p>
+        <div class="fields">
+          <div class="field full" data-field="communication" data-label-zh="日语现场沟通场景" data-label-ja="日本語での現場対応"><label><span data-zh="日语现场沟通场景" data-ja="日本語での現場対応">日语现场沟通场景</span></label><textarea name="communication" data-placeholder-zh="能否参加早会、汇报进度、说明故障、确认手顺、给协力公司下指示、和客户沟通。" data-placeholder-ja="朝礼、進捗報告、不具合説明、手順確認、協力会社への指示、顧客対応など。" placeholder="能否参加早会、汇报进度、说明故障、确认手顺、给协力公司下指示、和客户沟通。"></textarea></div>
+          <div class="field full" data-field="career_gap" data-label-zh="2018年7月～2021年8月经历" data-label-ja="2018年7月～2021年8月の経歴"><label><span data-zh="2018年7月～2021年8月经历" data-ja="2018年7月～2021年8月の経歴">2018年7月～2021年8月经历</span></label><textarea name="career_gap" data-placeholder-zh="工作、培训、个人原因或其他情况；不方便写可以写“面试说明”。" data-placeholder-ja="就業、研修、個人的事情など。詳細は面接で説明でも可。" placeholder="工作、培训、个人原因或其他情况；不方便写可以写“面试说明”。"></textarea></div>
+          <div class="field" data-field="certifications" data-label-zh="资格证书 / 培训" data-label-ja="資格・研修"><label><span data-zh="资格证书 / 培训" data-ja="資格・研修">资格证书 / 培训</span></label><textarea name="certifications" data-placeholder-zh="JLPT 以外的证书、设备培训、安全培训等。" data-placeholder-ja="JLPT以外の資格、設備研修、安全教育など。" placeholder="JLPT 以外的证书、设备培训、安全培训等。"></textarea></div>
+          <div class="field" data-field="other_notes" data-label-zh="其他需要说明的事项" data-label-ja="その他の確認事項"><label><span data-zh="其他需要说明的事项" data-ja="その他の確認事項">其他需要说明的事项</span></label><textarea name="other_notes" data-placeholder-zh="例如：原始证件照、健康限制、期望薪资、可提供的证明材料。" data-placeholder-ja="例：証明写真、健康上の制約、希望年収、提出可能な証明資料など。" placeholder="例如：原始证件照、健康限制、期望薪资、可提供的证明材料。"></textarea></div>
+          <div class="field full" data-field="strengths" data-label-zh="希望重点强调的优势" data-label-ja="強調したい強み"><label><span data-zh="希望重点强调的优势" data-ja="強調したい強み">希望重点强调的优势</span></label><div class="checks">
+            <label class="check"><input type="checkbox" name="strengths" value="startup"><span data-zh="设备启动 / 立上げ" data-ja="設備立上げ">设备启动 / 立上げ</span></label>
+            <label class="check"><input type="checkbox" name="strengths" value="troubleshooting"><span data-zh="故障诊断" data-ja="トラブル対応">故障诊断</span></label>
+            <label class="check"><input type="checkbox" name="strengths" value="cleanroom"><span data-zh="洁净室作业" data-ja="クリーンルーム">洁净室作业</span></label>
+            <label class="check"><input type="checkbox" name="strengths" value="line"><span data-zh="生产线联动" data-ja="生産ライン連動">生产线联动</span></label>
+            <label class="check"><input type="checkbox" name="strengths" value="leadership"><span data-zh="协力公司指导" data-ja="協力会社指導">协力公司指导</span></label>
+            <label class="check"><input type="checkbox" name="strengths" value="customer"><span data-zh="客户沟通" data-ja="顧客対応">客户沟通</span></label>
+          </div></div>
+        </div>
+      </section>
+    </form>
+
+    <div class="actions">
+      <span id="status" role="status" aria-live="polite"></span>
+      <div class="action-group">
+        <button type="button" id="printBtn" data-zh="打印 / 保存 PDF" data-ja="印刷 / PDF保存">打印 / 保存 PDF</button>
+        <button type="button" id="jsonBtn" class="primary" data-zh="导出 JSON" data-ja="JSON出力">导出 JSON</button>
+        <button type="button" id="markdownBtn" class="primary" data-zh="导出 Markdown" data-ja="Markdown出力">导出 Markdown</button>
+        <button type="button" id="clearBtn" class="danger" data-zh="清除本机草稿" data-ja="下書きを消去">清除本机草稿</button>
+      </div>
+    </div>
+
+    <footer data-zh="本页为资料收集工具，不替代正式履历书。提交前请由本人核对所有事实。" data-ja="本フォームは情報整理用です。提出前に本人がすべての事実を確認してください。">本页为资料收集工具，不替代正式履历书。提交前请由本人核对所有事实。</footer>
+  </div>
+
+  <script>
+    (() => {
+      const STORAGE_KEY = "yangxiao-resume-intake-v1";
+      const form = document.getElementById("intakeForm");
+      const status = document.getElementById("status");
+      const progressBar = document.getElementById("progressBar");
+      const progressText = document.getElementById("progressText");
+      let language = localStorage.getItem(STORAGE_KEY + ":language") || "zh";
+
+      const labels = (node) => node?.dataset[language === "zh" ? "labelZh" : "labelJa"] || node?.dataset.field || "";
+      const fieldNodes = () => [...form.querySelectorAll(".field[data-field]")];
+      const controlsFor = (field) => [...form.querySelectorAll(`[name="${CSS.escape(field.dataset.field)}"]`)];
+      const fieldValue = (field) => {
+        const controls = controlsFor(field);
+        if (controls[0]?.type === "checkbox") return controls.filter((control) => control.checked).map((control) => control.value);
+        return controls[0]?.value || "";
+      };
+      const hasValue = (value) => Array.isArray(value) ? value.length > 0 : String(value || "").trim().length > 0;
+
+      function applyLanguage(next) {
+        language = next;
+        localStorage.setItem(STORAGE_KEY + ":language", language);
+        document.documentElement.lang = language === "zh" ? "zh-CN" : "ja";
+        document.querySelectorAll("[data-zh][data-ja]").forEach((node) => {
+          node.textContent = language === "zh" ? node.dataset.zh : node.dataset.ja;
+        });
+        document.querySelectorAll("[data-placeholder-zh][data-placeholder-ja]").forEach((node) => {
+          node.placeholder = language === "zh" ? node.dataset.placeholderZh : node.dataset.placeholderJa;
+        });
+        document.querySelectorAll("option[data-zh][data-ja]").forEach((node) => {
+          node.textContent = language === "zh" ? node.dataset.zh : node.dataset.ja;
+        });
+        document.querySelectorAll("[data-lang]").forEach((button) => button.classList.toggle("active", button.dataset.lang === language));
+        updateProgress();
+      }
+
+      function snapshot() {
+        const values = {};
+        fieldNodes().forEach((field) => { values[field.dataset.field] = fieldValue(field); });
+        return { savedAt: new Date().toISOString(), language, values };
+      }
+
+      function save() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot()));
+        updateProgress();
+        showStatus(language === "zh" ? "已保存到当前浏览器" : "このブラウザに保存しました");
+      }
+
+      function restore() {
+        let saved;
+        try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch { saved = null; }
+        if (!saved?.values) return;
+        Object.entries(saved.values).forEach(([name, value]) => {
+          const controls = [...form.querySelectorAll(`[name="${CSS.escape(name)}"]`)];
+          if (controls[0]?.type === "checkbox") {
+            controls.forEach((control) => { control.checked = Array.isArray(value) && value.includes(control.value); });
+          } else if (controls[0]) controls[0].value = value;
+        });
+      }
+
+      function updateProgress() {
+        const fields = fieldNodes();
+        const complete = fields.filter((field) => hasValue(fieldValue(field))).length;
+        const percent = fields.length ? Math.round((complete / fields.length) * 100) : 0;
+        progressBar.style.width = percent + "%";
+        progressText.textContent = percent + "%";
+      }
+
+      function showStatus(message) {
+        status.textContent = message;
+        clearTimeout(showStatus.timer);
+        showStatus.timer = setTimeout(() => { status.textContent = ""; }, 3200);
+      }
+
+      function download(filename, content, type) {
+        const blob = new Blob([content], { type });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      }
+
+      function selectedText(control) {
+        if (control?.tagName !== "SELECT") return control?.value || "";
+        return control.selectedOptions[0]?.textContent || "";
+      }
+
+      function displayValue(field) {
+        const controls = controlsFor(field);
+        if (controls[0]?.type === "checkbox") {
+          return controls.filter((control) => control.checked).map((control) => control.nextElementSibling?.textContent.trim() || control.value).join("、");
+        }
+        return selectedText(controls[0]);
+      }
+
+      function exportMarkdown() {
+        const title = language === "zh" ? "杨霄｜日本求职资料补充" : "楊霄｜日本応募書類 情報補足";
+        const lines = [`# ${title}`, "", language === "zh" ? `导出时间：${new Date().toLocaleString("zh-CN")}` : `出力日時：${new Date().toLocaleString("ja-JP")}`, ""];
+        document.querySelectorAll(".form-section").forEach((section) => {
+          const heading = section.dataset[language === "zh" ? "sectionTitleZh" : "sectionTitleJa"];
+          lines.push(`## ${heading}`, "");
+          section.querySelectorAll(".field[data-field]").forEach((field) => {
+            lines.push(`- **${labels(field)}**：${displayValue(field) || "—"}`);
+          });
+          lines.push("");
+        });
+        download("yangxiao-resume-intake.md", lines.join("\n"), "text/markdown;charset=utf-8");
+        showStatus(language === "zh" ? "Markdown 已导出" : "Markdownを出力しました");
+      }
+
+      function exportJson() {
+        download("yangxiao-resume-intake.json", JSON.stringify(snapshot(), null, 2), "application/json;charset=utf-8");
+        showStatus(language === "zh" ? "JSON 已导出" : "JSONを出力しました");
+      }
+
+      form.addEventListener("input", save);
+      form.addEventListener("change", save);
+      document.querySelectorAll("[data-lang]").forEach((button) => button.addEventListener("click", () => applyLanguage(button.dataset.lang)));
+      document.getElementById("printBtn").addEventListener("click", () => window.print());
+      document.getElementById("jsonBtn").addEventListener("click", exportJson);
+      document.getElementById("markdownBtn").addEventListener("click", exportMarkdown);
+      document.getElementById("clearBtn").addEventListener("click", () => {
+        const message = language === "zh" ? "确定清除当前浏览器中的草稿吗？" : "このブラウザの下書きを消去しますか？";
+        if (!window.confirm(message)) return;
+        form.reset();
+        localStorage.removeItem(STORAGE_KEY);
+        updateProgress();
+        showStatus(language === "zh" ? "草稿已清除" : "下書きを消去しました");
+      });
+      restore();
+      applyLanguage(language);
+    })();
+  </script>
+</body>
+</html>
