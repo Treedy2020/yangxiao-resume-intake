@@ -15,6 +15,7 @@
     @media(max-width:600px){.shell{padding:7px 7px 60px}.hero{padding:24px 18px}.known-grid,.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.known,.quick,.optional,.delivery{padding:15px 13px}.actions #status{flex-basis:100%;order:-1}}
     @media print{html,body{background:#fff}.shell{max-width:none;padding:0}.hero{box-shadow:none}.notice,.actions,footer{display:none}.known,.quick,.optional,.delivery{box-shadow:none;break-inside:avoid}}
   </style>
+  <link rel="stylesheet" href="guidance.css">
 </head>
 <body>
   <div class="shell">
@@ -68,6 +69,7 @@
     <div class="actions"><span id="status" role="status" aria-live="polite"></span><div class="action-group"><button type="button" id="printBtn" data-zh="打印 / PDF" data-ja="印刷 / PDF">打印 / PDF</button><button type="button" id="yamlBtn" class="primary" data-zh="candidate.yaml" data-ja="candidate.yaml">candidate.yaml</button><button type="button" id="jsonBtn" class="primary">JSON</button><button type="button" id="markdownBtn" class="primary">Markdown</button><button type="button" id="clearBtn" class="danger" data-zh="清除草稿" data-ja="下書きを消去">清除草稿</button></div></div>
     <footer data-zh="只需填写空白项；内容仅保存在当前浏览器。" data-ja="空欄だけ入力してください。内容はこのブラウザにのみ保存されます。">只需填写空白项；内容仅保存在当前浏览器。</footer>
   </div>
+  <script src="guidance.js" defer></script>
   <script>
     (() => {
       const KEY = "yangxiao-resume-intake-v3";
