@@ -6,8 +6,9 @@ Static, bilingual questionnaire for collecting facts needed to complete Yang Xia
 
 - No backend, analytics, or third-party scripts.
 - Form values are saved only in the visitor's own browser via `localStorage`.
-- The page provides Markdown and JSON export for sending the answers back manually.
-- The repository contains no personal resume data.
+- Confirmed professional facts are prefilled; phone, detailed address, birthday, visa and other sensitive items are left for the candidate to confirm.
+- The page provides `candidate.yaml`, Markdown and JSON export for sending the answers back manually.
+- The repository contains no phone number, detailed address, or other direct contact data.
 
 ## GitHub Pages
 
