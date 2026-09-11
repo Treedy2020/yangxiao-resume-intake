@@ -3,499 +3,151 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="杨霄日本求职材料资料补充表">
-  <title data-zh="杨霄｜资料补充表" data-ja="楊霄｜情報補足フォーム">杨霄｜资料补充表</title>
+  <meta name="description" content="杨霄日本求职资料轻量补充表">
+  <title data-zh="杨霄｜资料确认表" data-ja="楊霄｜確認フォーム">杨霄｜资料确认表</title>
   <style>
-    :root{--ink:#171717;--muted:#656565;--line:#c9c9c4;--soft:#f3f3f0;--paper:#fff;--accent:#111;--ok:#315f45;--shadow:0 18px 50px rgba(0,0,0,.08)}
-    *{box-sizing:border-box}
-    html{background:#e9e9e5;scroll-behavior:smooth}
-    body{margin:0;color:var(--ink);background:#e9e9e5;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP",Arial,sans-serif;line-height:1.65}
-    button,input,select,textarea{font:inherit}
-    button{cursor:pointer}
-    .shell{max-width:1080px;margin:0 auto;padding:24px 18px 80px}
-    .masthead{position:relative;overflow:hidden;padding:34px clamp(24px,5vw,64px) 30px;background:var(--ink);color:#fff;box-shadow:var(--shadow)}
-    .masthead:after{content:"";position:absolute;width:260px;height:260px;right:-80px;top:-160px;border:1px solid rgba(255,255,255,.3);border-radius:50%}
-    .kicker{font-family:"Apple Chancery","Bradley Hand","Klee One",cursive;font-size:13px;letter-spacing:.16em;color:#cfcfca;text-transform:uppercase}
-    h1,h2,h3{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP",serif;font-weight:700;line-height:1.25}
-    h1{margin:12px 0 8px;font-size:clamp(28px,5vw,46px);letter-spacing:.08em}
-    .masthead p{max-width:740px;margin:0;color:#d8d8d3;font-size:14px}
-    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:26px}
-    .lang-switch{display:flex;gap:4px;padding:3px;border:1px solid rgba(255,255,255,.35);border-radius:999px}
-    .lang-switch button{border:0;border-radius:999px;padding:6px 15px;background:transparent;color:#ddd;font-size:13px}
-    .lang-switch button.active{background:#fff;color:#111}
-    .privacy{display:flex;gap:12px;align-items:flex-start;margin:20px 0;padding:16px 18px;border:1px solid #bdbdb8;background:#fff;color:#373737;box-shadow:0 5px 20px rgba(0,0,0,.04)}
-    .privacy strong{display:block;margin-bottom:2px}
-    .privacy-mark{display:grid;place-items:center;flex:0 0 28px;height:28px;border:1px solid #777;border-radius:50%;font-family:Georgia,serif;font-weight:700}
-    .progress-wrap{display:flex;align-items:center;gap:12px;margin:18px 0 24px;color:var(--muted);font-size:13px}
-    .progress{height:6px;flex:1;background:#d5d5d0;border-radius:999px;overflow:hidden}
-    .progress i{display:block;width:0;height:100%;background:#222;transition:width .2s ease}
-    form{display:grid;gap:18px}
-    .form-section{padding:24px clamp(18px,4vw,36px);background:var(--paper);border:1px solid #d0d0cb;box-shadow:0 6px 20px rgba(0,0,0,.035)}
-    .section-head{display:flex;align-items:baseline;gap:12px;justify-content:space-between;margin-bottom:18px;border-bottom:2px solid var(--ink);padding-bottom:10px}
-    .section-head h2{margin:0;font-size:23px;letter-spacing:.06em}
-    .section-number{font-family:Georgia,serif;color:#777;font-size:13px}
-    .section-desc{margin:-8px 0 18px;color:var(--muted);font-size:13px}
-    .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px}
-    .field{min-width:0}
-    .field.full{grid-column:1/-1}
-    .field label{display:block;margin-bottom:6px;font-size:14px;font-weight:700}
-    .field label em{font-size:11px;font-weight:400;color:#777;font-style:normal;margin-left:6px}
-    .field input,.field select,.field textarea{width:100%;border:1px solid #a9a9a4;border-radius:2px;background:#fff;color:var(--ink);padding:10px 12px;outline:0;transition:border-color .15s,box-shadow .15s}
-    .field input,.field select{min-height:42px}
-    .field textarea{min-height:92px;resize:vertical}
-    .field input:focus,.field select:focus,.field textarea:focus{border-color:#111;box-shadow:0 0 0 3px rgba(0,0,0,.08)}
-    .hint{margin:6px 0 0;color:#777;font-size:12px}
-    .checks{display:flex;flex-wrap:wrap;gap:8px}
-    .check{position:relative}
-    .check input{position:absolute;opacity:0;pointer-events:none}
-    .check span{display:block;padding:8px 12px;border:1px solid #aaa;border-radius:999px;color:#444;font-size:13px;transition:.15s}
-    .check input:checked+span{background:#171717;border-color:#171717;color:#fff}
-    .option-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-    .option-card{display:grid;grid-template-columns:minmax(0,1fr) 180px;align-items:center;gap:10px;padding:10px 12px;border:1px solid #d0d0cb;background:#fafaf8}
-    .option-card strong{font-size:13px}.option-card small{display:block;color:#777;font-size:11px}
-    .option-card select{width:100%;min-height:36px;border:1px solid #aaa;border-radius:2px;background:#fff;padding:6px 8px}
-    .skill-matrix{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-    .skill-row{display:grid;grid-template-columns:minmax(0,1fr) 148px;align-items:center;gap:9px;padding:9px 10px;border:1px solid #d0d0cb;background:#fafaf8}
-    .skill-row label{margin:0;font-size:13px}.skill-row select{width:100%;min-height:36px;border:1px solid #aaa;border-radius:2px;background:#fff;padding:6px 7px}
-    .project-card{margin-top:14px;padding:17px 18px;border:1px solid #bdbdb8;border-left:4px solid #111;background:#fff;break-inside:avoid}
-    .project-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #d0d0cb}
-    .project-head h3{margin:0;font-size:18px}.project-index{font-family:Georgia,serif;color:#777;font-size:12px}
-    .project-card textarea{min-height:76px}.handwrite{border-top:0;border-left:0;border-right:0;border-radius:0;background:repeating-linear-gradient(to bottom,#fff 0,#fff 29px,#d5d5d0 30px);line-height:30px;padding-top:3px}
-    .target-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.target-list .check{display:block}.target-list .check span{border-radius:2px;background:#fafaf8}
-    .rule-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.rule-list .check span{border-radius:2px;background:#fafaf8}
-    .note-box{padding:13px 15px;border-left:3px solid #111;background:var(--soft);color:#444;font-size:13px}
-    .actions{position:sticky;bottom:14px;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:4px;padding:12px 14px;background:rgba(255,255,255,.94);border:1px solid #bdbdb8;box-shadow:0 10px 30px rgba(0,0,0,.12);backdrop-filter:blur(10px)}
-    .action-group{display:flex;gap:8px;flex-wrap:wrap}
-    .actions button{border:1px solid #222;border-radius:2px;padding:10px 15px;background:#fff;color:#111;font-weight:700;font-size:13px}
-    .actions .primary{background:#111;color:#fff}
-    .actions .danger{border-color:#aaa;color:#555;font-weight:400}
-    #status{color:var(--ok);font-size:12px;min-height:1.4em}
-    footer{margin-top:20px;color:#777;font-size:12px;text-align:center}
-    .print-only{display:none}
-    @media(max-width:700px){
-      .shell{padding:10px 10px 60px}.masthead{padding:28px 22px 24px}.masthead p{font-size:13px}.fields,.option-grid,.skill-matrix,.target-list,.rule-list{grid-template-columns:1fr}.field.full{grid-column:auto}.form-section{padding:20px 16px}.section-head h2{font-size:20px}.actions{bottom:8px}.actions #status{flex-basis:100%;order:-1}.option-card,.skill-row{grid-template-columns:1fr}.project-card{padding:15px 13px}
-    }
-    @media print{
-      html,body{background:#fff}.shell{max-width:none;padding:0}.masthead{box-shadow:none}.privacy,.progress-wrap,.actions,footer{display:none}.form-section{box-shadow:none;break-inside:avoid}.print-only{display:block}
-    }
+    :root{--ink:#171717;--muted:#6b6b66;--line:#c9c9c4;--paper:#fff;--soft:#f4f4f1;--ok:#315f45}
+    *{box-sizing:border-box}html{background:#e9e9e5;scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:#e9e9e5;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP",Arial,sans-serif;line-height:1.6}
+    button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{max-width:980px;margin:auto;padding:14px 14px 70px}
+    .masthead{position:relative;overflow:hidden;padding:28px clamp(20px,5vw,54px);background:#111;color:#fff;box-shadow:0 16px 40px #0001}.masthead:after{content:"";position:absolute;width:220px;height:220px;right:-70px;top:-140px;border:1px solid #fff4;border-radius:50%}
+    .kicker{font-family:"Apple Chancery","Bradley Hand","Klee One",cursive;color:#d8d8d2;font-size:12px;letter-spacing:.16em}.masthead h1{margin:10px 0 6px;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:clamp(27px,5vw,42px);letter-spacing:.08em}.masthead p{max-width:680px;margin:0;color:#d9d9d4;font-size:13px}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px}.langs{display:flex;gap:4px;padding:3px;border:1px solid #fff5;border-radius:999px}.langs button{border:0;border-radius:999px;padding:5px 14px;background:transparent;color:#ddd;font-size:13px}.langs button.active{background:#fff;color:#111}
+    .notice{display:flex;gap:10px;margin:18px 0;padding:13px 15px;border:1px solid #bdbdb8;background:#fff;font-size:13px}.notice b{display:grid;place-items:center;flex:0 0 25px;height:25px;border:1px solid #777;border-radius:50%}
+    .progress{display:flex;align-items:center;gap:10px;margin:16px 0 20px;color:var(--muted);font-size:12px}.progress-bar{height:6px;flex:1;background:#d4d4cf;border-radius:999px;overflow:hidden}.progress-bar i{display:block;width:0;height:100%;background:#111;transition:width .2s}
+    form{display:grid;gap:16px}.section{padding:21px clamp(16px,4vw,30px);background:var(--paper);border:1px solid #d0d0cb;box-shadow:0 5px 16px #00000008}.section-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #111}.section-title h2{margin:0;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:21px;letter-spacing:.05em}.num{font-family:Georgia,serif;color:#777;font-size:12px}.desc{margin:-5px 0 14px;color:var(--muted);font-size:12px}
+    .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 18px}.field{min-width:0}.field.full{grid-column:1/-1}.field label{display:block;margin-bottom:5px;font-size:13px;font-weight:700}.field label em{margin-left:5px;color:#777;font-size:11px;font-style:normal;font-weight:400}.field input,.field select,.field textarea{width:100%;border:1px solid #aaa;border-radius:2px;background:#fff;color:#171717;padding:9px 10px;outline:0}.field input,.field select{min-height:39px}.field textarea{min-height:72px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#111;box-shadow:0 0 0 3px #0000000d}
+    .checks{display:flex;flex-wrap:wrap;gap:7px}.check{position:relative}.check input{position:absolute;opacity:0;pointer-events:none}.check span{display:block;padding:7px 11px;border:1px solid #aaa;border-radius:999px;color:#444;font-size:12px}.check input:checked+span{background:#171717;border-color:#171717;color:#fff}
+    .option-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.option{display:grid;grid-template-columns:1fr 160px;align-items:center;gap:9px;padding:9px 10px;border:1px solid #d0d0cb;background:#fafaf8;font-size:12px}.option select{width:100%;min-height:34px;border:1px solid #aaa;background:#fff;padding:5px 6px}.note{margin:12px 0;padding:10px 12px;border-left:3px solid #111;background:var(--soft);color:#4b4b47;font-size:12px}
+    .project{margin-top:13px;padding:15px;border:1px solid #bdbdb8;border-left:4px solid #111;background:#fff;break-inside:avoid}.project-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid #d0d0cb}.project-head h3{margin:0;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:17px}.project-index{font:12px Georgia,serif;color:#777}.handwrite{border-top:0!important;border-left:0!important;border-right:0!important;border-radius:0!important;background:repeating-linear-gradient(to bottom,#fff 0,#fff 27px,#d5d5d0 28px)!important;line-height:28px!important;padding-top:3px!important}
+    .actions{position:sticky;bottom:9px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:2px;padding:10px 12px;background:#fffffff2;border:1px solid #bdbdb8;box-shadow:0 8px 26px #0002;backdrop-filter:blur(8px)}.action-group{display:flex;gap:7px;flex-wrap:wrap}.actions button{border:1px solid #222;border-radius:2px;padding:8px 12px;background:#fff;color:#111;font-size:12px;font-weight:700}.actions .primary{background:#111;color:#fff}.actions .danger{border-color:#aaa;color:#555;font-weight:400}#status{min-height:1.3em;color:var(--ok);font-size:12px}footer{margin-top:17px;color:#777;font-size:11px;text-align:center}
+    @media(max-width:680px){.shell{padding:8px 8px 60px}.masthead{padding:24px 18px}.masthead p{font-size:12px}.fields,.option-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.option{grid-template-columns:1fr}.section{padding:18px 14px}.section-title h2{font-size:19px}.actions{bottom:6px}.actions #status{flex-basis:100%;order:-1}}
+    @media print{html,body{background:#fff}.shell{max-width:none;padding:0}.masthead{box-shadow:none}.notice,.progress,.actions,footer{display:none}.section{box-shadow:none;break-inside:avoid}}
   </style>
 </head>
 <body>
   <div class="shell">
     <header class="masthead">
       <div class="kicker">RESUME INTAKE / FIELD ENGINEER</div>
-      <h1 data-zh="杨霄｜资料补充表" data-ja="楊霄｜情報補足フォーム">杨霄｜资料补充表</h1>
-      <p data-zh="请补充现有履历中尚未明确的事实。每一项都可以写“无”或“待确认”，不要为了完整而猜测。"
-         data-ja="既存の応募書類で未確認の事実を補足するフォームです。不明な項目は「なし」「要確認」と記入し、推測で埋めないでください。">请补充现有履历中尚未明确的事实。每一项都可以写“无”或“待确认”，不要为了完整而猜测。</p>
-      <div class="toolbar">
-        <div class="lang-switch" aria-label="Language">
-          <button type="button" data-lang="zh" class="active">中文</button>
-          <button type="button" data-lang="ja">日本語</button>
-        </div>
-        <span data-zh="静态页面・无需登录" data-ja="静的ページ・ログイン不要">静态页面・无需登录</span>
-      </div>
+      <h1 data-zh="杨霄｜资料确认表" data-ja="楊霄｜確認フォーム">杨霄｜资料确认表</h1>
+      <p data-zh="只补充会改变投递判断的少量信息。已有履历内容已预填；不确定的项目先留空，不需要写长篇说明。" data-ja="応募判断に必要な最小限の情報だけを確認します。既存の履歴書内容は入力済みで、不明な項目は空欄のままで構いません。">只补充会改变投递判断的少量信息。已有履历内容已预填；不确定的项目先留空，不需要写长篇说明。</p>
+      <div class="toolbar"><div class="langs"><button type="button" data-lang="zh" class="active">中文</button><button type="button" data-lang="ja">日本語</button></div><span data-zh="静态页面・本地保存" data-ja="静的ページ・ローカル保存">静态页面・本地保存</span></div>
     </header>
 
-    <aside class="privacy">
-      <div class="privacy-mark">✓</div>
-      <div>
-        <strong data-zh="隐私提示" data-ja="プライバシー">隐私提示</strong>
-        <span data-zh="本页面不连接数据库，也不会把填写内容发送到 GitHub。内容只保存在当前浏览器，可随时导出或清除。页面仅预填已确认的职业信息；电话、详细地址、生日、签证等敏感项请本人确认。"
-              data-ja="このページはデータベースに接続せず、入力内容を GitHub に送信しません。内容はこのブラウザにのみ保存されます。確認済みの職務情報のみ初期入力し、電話・詳細住所・生年月日・在留資格などは本人が確認してください。">本页面不连接数据库，也不会把填写内容发送到 GitHub。内容只保存在当前浏览器，可随时导出或清除。页面仅预填已确认的职业信息；电话、详细地址、生日、签证等敏感项请本人确认。</span>
-      </div>
-    </aside>
-
-    <div class="progress-wrap">
-      <span data-zh="完成度" data-ja="入力進捗">完成度</span>
-      <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
-      <strong id="progressText">0%</strong>
-    </div>
+    <aside class="notice"><b>✓</b><div><strong data-zh="填写原则" data-ja="入力ルール">填写原则</strong><br><span data-zh="只写本人确认过的事实。电话、详细地址、生日、签证等敏感信息不会预填到公开页面。" data-ja="本人が確認した事実だけを入力します。電話・詳細住所・生年月日・在留資格などの個人情報は公開ページに初期入力しません。">只写本人确认过的事实。电话、详细地址、生日、签证等敏感信息不会预填到公开页面。</span></div></aside>
+    <div class="progress"><span data-zh="完成度" data-ja="入力進捗">完成度</span><div class="progress-bar"><i id="progressBar"></i></div><strong id="progressText">0%</strong></div>
 
     <form id="intakeForm">
-      <section class="form-section" data-section-title-zh="基本信息" data-section-title-ja="基本情報">
-        <div class="section-head"><h2 data-zh="基本信息" data-ja="基本情報">基本信息</h2><span class="section-number">01</span></div>
-        <p class="section-desc" data-zh="确认履历首页最重要的定位和联系信息。" data-ja="応募書類の第一印象に関わる基本情報を確認します。">确认履历首页最重要的定位和联系信息。</p>
+      <section class="section" data-section-title-zh="已知资料" data-section-title-ja="確認済み情報">
+        <div class="section-title"><h2 data-zh="已知资料" data-ja="確認済み情報">已知资料</h2><span class="num">01</span></div>
+        <p class="desc" data-zh="这些内容已经从现有履历整理好，只需快速核对。" data-ja="既存の履歴書から整理済みです。内容だけ確認してください。">这些内容已经从现有履历整理好，只需快速核对。</p>
         <div class="fields">
-          <div class="field" data-field="full_name" data-label-zh="姓名" data-label-ja="氏名"><label><span data-zh="姓名" data-ja="氏名">姓名</span><em>已知</em></label><input name="full_name" type="text" autocomplete="name" value="杨霄" data-placeholder-zh="例如：杨霄" data-placeholder-ja="例：楊霄" placeholder="例如：杨霄"></div>
-          <div class="field" data-field="target_role" data-label-zh="目标职位" data-label-ja="希望職種"><label><span data-zh="目标职位" data-ja="希望職種">目标职位</span><em>已知方向</em></label><input name="target_role" type="text" value="半导体制造装置 Field Engineer / 装置立上げエンジニア" data-placeholder-zh="例如：现场工程师 / Field Engineer" data-placeholder-ja="例：フィールドエンジニア" placeholder="例如：现场工程师 / Field Engineer"></div>
-          <div class="field" data-field="current_city" data-label-zh="当前所在地" data-label-ja="現住所"><label><span data-zh="当前所在地" data-ja="現住所">当前所在地</span><em>已知城市</em></label><input name="current_city" type="text" value="中国・四川省绵阳市" data-placeholder-zh="城市、国家即可" data-placeholder-ja="市区・国名で可" placeholder="城市、国家即可"></div>
-          <div class="field" data-field="nationality" data-label-zh="国籍" data-label-ja="国籍"><label><span data-zh="国籍" data-ja="国籍">国籍</span></label><input name="nationality" type="text" value="中国" placeholder="中国 / China"></div>
-          <div class="field" data-field="gender" data-label-zh="性别" data-label-ja="性別"><label><span data-zh="性别" data-ja="性別">性别</span></label><select name="gender"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="male" selected data-zh="男性" data-ja="男性">男性</option><option value="female" data-zh="女性" data-ja="女性">女性</option><option value="other" data-zh="其他 / 待确认" data-ja="その他 / 要確認">其他 / 待确认</option></select></div>
-          <div class="field" data-field="birth_date" data-label-zh="出生日期（本人确认）" data-label-ja="生年月日（本人確認）"><label><span data-zh="出生日期（本人确认）" data-ja="生年月日（本人確認）">出生日期（本人确认）</span></label><input name="birth_date" type="date"></div>
-          <div class="field" data-field="marital_status" data-label-zh="婚姻状况（本人确认）" data-label-ja="婚姻状況（本人確認）"><label><span data-zh="婚姻状况（本人确认）" data-ja="婚姻状況（本人確認）">婚姻状况（本人确认）</span></label><select name="marital_status"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="married" data-zh="已婚" data-ja="既婚">已婚</option><option value="single" data-zh="未婚" data-ja="未婚">未婚</option><option value="other" data-zh="其他 / 不公开" data-ja="その他 / 非公開">其他 / 不公开</option></select></div>
-          <div class="field" data-field="japanese_level" data-label-zh="日语及现场沟通水平" data-label-ja="日本語・現場コミュニケーション"><label><span data-zh="日语及现场沟通水平" data-ja="日本語・現場コミュニケーション">日语及现场沟通水平</span><em>已知 N2</em></label><select name="japanese_level"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="N2" selected data-zh="JLPT N2" data-ja="JLPT N2">JLPT N2</option><option value="business" data-zh="可参加工作会议、汇报和故障沟通" data-ja="業務会議・報告・不具合連絡が可能">可参加工作会议、汇报和故障沟通</option><option value="daily" data-zh="日常交流为主" data-ja="日常会話が中心">日常交流为主</option><option value="other" data-zh="其他 / 待确认" data-ja="その他 / 要確認">其他 / 待确认</option></select></div>
-          <div class="field" data-field="contact_email" data-label-zh="联系邮箱（本人填写）" data-label-ja="連絡先メール（本人入力）"><label><span data-zh="联系邮箱（本人填写）" data-ja="連絡先メール（本人入力）">联系邮箱（本人填写）</span></label><input name="contact_email" type="email" autocomplete="email" placeholder="name@example.com"></div>
-          <div class="field" data-field="phone" data-label-zh="手机（本人填写）" data-label-ja="電話番号（本人入力）"><label><span data-zh="手机（本人填写）" data-ja="電話番号（本人入力）">手机（本人填写）</span></label><input name="phone" type="tel" autocomplete="tel" placeholder="请本人填写"></div>
-          <div class="field full" data-field="postal_address" data-label-zh="详细地址 / 邮编（本人填写）" data-label-ja="詳細住所・郵便番号（本人入力）"><label><span data-zh="详细地址 / 邮编（本人填写）" data-ja="詳細住所・郵便番号（本人入力）">详细地址 / 邮编（本人填写）</span></label><textarea name="postal_address" data-placeholder-zh="公开页面不预填；提交前由本人确认日文 / 英文写法。" data-placeholder-ja="公開ページでは初期入力しません。提出前に本人が日本語・英語表記を確認してください。" placeholder="公开页面不预填；提交前由本人确认日文 / 英文写法。"></textarea></div>
-          <div class="field full" data-field="employment_relation" data-label-zh="所属公司与客户现场的关系" data-label-ja="所属会社と顧客現場の関係"><label><span data-zh="所属公司与客户现场的关系" data-ja="所属会社と顧客現場の関係">所属公司与客户现场的关系</span><em>部分已知，需确认</em></label><textarea name="employment_relation" data-placeholder-zh="例如：本人属于哪家公司；在哪个客户工厂、以什么项目身份工作；是否直接雇佣。" data-placeholder-ja="例：所属会社、顧客工場、プロジェクト上の立場、直接雇用かどうか。" placeholder="例如：本人属于哪家公司；在哪个客户工厂、以什么项目身份工作；是否直接雇佣。">善威科技发展（上海）有限公司大连分公司（テクノプロ）及镇江晟德精密机械有限公司；项目现场包括 Hirano Tecseed、ULVAC、JSW、Canon 相关客户工厂。具体雇佣关系、项目合同关系请本人确认。</textarea></div>
+          <div class="field" data-field="full_name" data-label-zh="姓名" data-label-ja="氏名"><label><span data-zh="姓名" data-ja="氏名">姓名</span></label><input name="full_name" value="杨霄"></div>
+          <div class="field" data-field="target_role" data-label-zh="目标职位" data-label-ja="希望職種"><label><span data-zh="目标职位" data-ja="希望職種">目标职位</span></label><input name="target_role" value="半导体制造装置 Field Engineer / 装置立上げエンジニア"></div>
+          <div class="field" data-field="current_city" data-label-zh="所在地" data-label-ja="所在地"><label><span data-zh="所在地" data-ja="所在地">所在地</span></label><input name="current_city" value="中国・四川省绵阳市"></div>
+          <div class="field" data-field="japanese_level" data-label-zh="日语" data-label-ja="日本語"><label><span data-zh="日语" data-ja="日本語">日语</span></label><select name="japanese_level"><option value="N2" selected>JLPT N2</option><option value="business" data-zh="工作会议、汇报、故障沟通可" data-ja="会議・報告・不具合連絡可">工作会议、汇报、故障沟通可</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
+          <div class="field full" data-field="employment_relation" data-label-zh="公司 / 客户现场关系" data-label-ja="所属会社・顧客現場"><label><span data-zh="公司 / 客户现场关系" data-ja="所属会社・顧客現場">公司 / 客户现场关系</span></label><textarea name="employment_relation">善威科技发展（上海）有限公司大连分公司（テクノプロ）及镇江晟德精密机械有限公司；项目现场包括 Hirano Tecseed、ULVAC、JSW、Canon 相关客户工厂。具体雇佣关系请本人确认。</textarea></div>
+          <div class="field full" data-field="equipment_summary" data-label-zh="设备经验" data-label-ja="設備経験"><label><span data-zh="设备经验" data-ja="設備経験">设备经验</span></label><textarea name="equipment_summary">Canon 露光装置、ULVAC 真空蒸镀装置、JSW 锂电池薄膜制造设备、Hirano Tecseed 涂布设备；覆盖搬入、组装、据付、调整、试运行、维护和故障处理。</textarea></div>
         </div>
       </section>
 
-      <section class="form-section" data-section-title-zh="在留与求职条件" data-section-title-ja="在留資格・応募条件">
-        <div class="section-head"><h2 data-zh="在留与求职条件" data-ja="在留資格・応募条件">在留与求职条件</h2><span class="section-number">02</span></div>
-        <p class="section-desc" data-zh="这些信息决定日本招聘方是否能判断入职时间和签证安排。" data-ja="入社時期や在留資格の確認に必要な情報です。">这些信息决定日本招聘方是否能判断入职时间和签证安排。</p>
-        <div class="fields">
-          <div class="field" data-field="residence_status" data-label-zh="目前在留 / 签证状态" data-label-ja="現在の在留資格"><label><span data-zh="目前在留 / 签证状态" data-ja="現在の在留資格">目前在留 / 签证状态</span></label><select name="residence_status"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="china" data-zh="目前在中国，尚无日本在留资格" data-ja="現在中国、日本の在留資格なし">目前在中国，尚无日本在留资格</option><option value="has_status" data-zh="已有日本在留资格" data-ja="日本の在留資格あり">已有日本在留资格</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
-          <div class="field" data-field="sponsorship" data-label-zh="是否需要公司协助签证" data-label-ja="会社のビザ支援"><label><span data-zh="是否需要公司协助签证" data-ja="会社のビザ支援">是否需要公司协助签证</span></label><select name="sponsorship"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="需要" data-ja="必要">需要</option><option value="no" data-zh="不需要" data-ja="不要">不需要</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
-          <div class="field" data-field="available_date" data-label-zh="可入职 / 可赴日时间" data-label-ja="入社・渡日可能時期"><label><span data-zh="可入职 / 可赴日时间" data-ja="入社・渡日可能時期">可入职 / 可赴日时间</span></label><input name="available_date" type="text" data-placeholder-zh="例如：拿到签证后 1 个月内" data-placeholder-ja="例：ビザ取得後1か月以内" placeholder="例如：拿到签证后 1 个月内"></div>
-          <div class="field" data-field="preferred_location" data-label-zh="希望工作地点" data-label-ja="希望勤務地"><label><span data-zh="希望工作地点" data-ja="希望勤務地">希望工作地点</span></label><input name="preferred_location" type="text" data-placeholder-zh="例如：关东、关西、全国可" data-placeholder-ja="例：関東、関西、全国可" placeholder="例如：关东、关西、全国可"></div>
-          <div class="field" data-field="travel_availability" data-label-zh="出差 / 长期驻场意愿" data-label-ja="出張・長期出張"><label><span data-zh="出差 / 长期驻场意愿" data-ja="出張・長期出張">出差 / 长期驻场意愿</span></label><select name="travel_availability"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="可以" data-ja="可">可以</option><option value="limited" data-zh="有限制，需要说明" data-ja="条件あり、要相談">有限制，需要说明</option><option value="no" data-zh="不可以" data-ja="不可">不可以</option></select></div>
-          <div class="field" data-field="long_term" data-label-zh="是否希望长期在日本工作" data-label-ja="日本での長期就業意向"><label><span data-zh="是否希望长期在日本工作" data-ja="日本での長期就業意向">是否希望长期在日本工作</span></label><select name="long_term"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="是" data-ja="はい">是</option><option value="no" data-zh="否" data-ja="いいえ">否</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
-          <div class="field" data-field="residence_expiry" data-label-zh="在留期限（如有）" data-label-ja="在留期限（該当時）"><label><span data-zh="在留期限（如有）" data-ja="在留期限（該当時）">在留期限（如有）</span></label><input name="residence_expiry" type="text" placeholder="本人填写 / 不适用"></div>
-          <div class="field" data-field="past_japan_visa" data-label-zh="过去是否取得过日本工作签证" data-label-ja="過去の日本就労ビザ"><label><span data-zh="过去是否取得过日本工作签证" data-ja="過去の日本就労ビザ">过去是否取得过日本工作签证</span></label><select name="past_japan_visa"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="有" data-ja="あり">有</option><option value="no" data-zh="没有" data-ja="なし">没有</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
-          <div class="field" data-field="residence_card" data-label-zh="是否持有在留卡" data-label-ja="在留カード"><label><span data-zh="是否持有在留卡" data-ja="在留カード">是否持有在留卡</span></label><select name="residence_card"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="有" data-ja="あり">有</option><option value="no" data-zh="没有" data-ja="なし">没有</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
-          <div class="field" data-field="mynumber" data-label-zh="是否有 MyNumber" data-label-ja="マイナンバー"><label><span data-zh="是否有 MyNumber" data-ja="マイナンバー">是否有 MyNumber</span></label><select name="mynumber"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="有" data-ja="あり">有</option><option value="no" data-zh="没有" data-ja="なし">没有</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
-          <div class="field" data-field="relocation" data-label-zh="能否全国转勤 / 搬迁" data-label-ja="全国転勤・転居"><label><span data-zh="能否全国转勤 / 搬迁" data-ja="全国転勤・転居">能否全国转勤 / 搬迁</span></label><select name="relocation"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="可以" data-ja="可">可以</option><option value="limited" data-zh="有限制，需要说明" data-ja="条件あり、要相談">有限制，需要说明</option><option value="no" data-zh="不可以" data-ja="不可">不可以</option></select></div>
-          <div class="field" data-field="night_shift" data-label-zh="能否夜班" data-label-ja="夜勤"><label><span data-zh="能否夜班" data-ja="夜勤">能否夜班</span></label><select name="night_shift"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="可以" data-ja="可">可以</option><option value="limited" data-zh="有限制" data-ja="条件あり">有限制</option><option value="no" data-zh="不可以" data-ja="不可">不可以</option></select></div>
-          <div class="field" data-field="shift_work" data-label-zh="能否轮班" data-label-ja="シフト勤務"><label><span data-zh="能否轮班" data-ja="シフト勤務">能否轮班</span></label><select name="shift_work"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="可以" data-ja="可">可以</option><option value="limited" data-zh="有限制" data-ja="条件あり">有限制</option><option value="no" data-zh="不可以" data-ja="不可">不可以</option></select></div>
-          <div class="field" data-field="cleanroom_work" data-label-zh="能否洁净室作业" data-label-ja="クリーンルーム作業"><label><span data-zh="能否洁净室作业" data-ja="クリーンルーム作業">能否洁净室作业</span></label><select name="cleanroom_work"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="experienced" data-zh="已有经验（履历已确认）" data-ja="経験あり（履歴書で確認済み）">已有经验（履历已确认）</option><option value="yes" data-zh="可以" data-ja="可">可以</option><option value="no" data-zh="不可以" data-ja="不可">不可以</option></select></div>
-          <div class="field" data-field="on_call" data-label-zh="能否 On-call" data-label-ja="オンコール"><label><span data-zh="能否 On-call" data-ja="オンコール">能否 On-call</span></label><select name="on_call"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="可以" data-ja="可">可以</option><option value="limited" data-zh="有限制" data-ja="条件あり">有限制</option><option value="no" data-zh="不可以" data-ja="不可">不可以</option></select></div>
-          <div class="field" data-field="travel_months" data-label-zh="每年可接受出差时长" data-label-ja="年間出張可能期間"><label><span data-zh="每年可接受出差时长" data-ja="年間出張可能期間">每年可接受出差时长</span></label><select name="travel_months"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="0_1" data-zh="1 个月以内" data-ja="1か月以内">1 个月以内</option><option value="1_3" data-zh="1～3 个月" data-ja="1～3か月">1～3 个月</option><option value="3_6" data-zh="3～6 个月" data-ja="3～6か月">3～6 个月</option><option value="6_plus" data-zh="6 个月以上" data-ja="6か月以上">6 个月以上</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
-          <div class="field" data-field="expected_salary" data-label-zh="期望年薪" data-label-ja="希望年収"><label><span data-zh="期望年薪" data-ja="希望年収">期望年薪</span></label><input name="expected_salary" type="text" placeholder="例如：500 万日元 / 待确认"></div>
-          <div class="field" data-field="minimum_salary" data-label-zh="最低接受年薪" data-label-ja="最低希望年収"><label><span data-zh="最低接受年薪" data-ja="最低希望年収">最低接受年薪</span></label><input name="minimum_salary" type="text" placeholder="例如：400 万日元 / 待确认"></div>
-          <div class="field" data-field="english" data-label-zh="英语水平" data-label-ja="英語力"><label><span data-zh="英语水平" data-ja="英語力">英语水平</span></label><select name="english"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="business" data-zh="可以工作沟通" data-ja="業務コミュニケーション可">可以工作沟通</option><option value="basic" data-zh="基础" data-ja="基礎">基础</option><option value="none" data-zh="无 / 待确认" data-ja="なし / 要確認">无 / 待确认</option></select></div>
-          <div class="field" data-field="driver_license" data-label-zh="驾驶证" data-label-ja="運転免許"><label><span data-zh="驾驶证" data-ja="運転免許">驾驶证</span></label><select name="driver_license"><option value="" data-zh="请选择" data-ja="選択してください">请选择</option><option value="yes" data-zh="有" data-ja="あり">有</option><option value="no" data-zh="没有" data-ja="なし">没有</option><option value="unknown" data-zh="待确认" data-ja="要確認">待确认</option></select></div>
+      <section class="section" data-section-title-zh="只需本人选择" data-section-title-ja="本人が選ぶ項目">
+        <div class="section-title"><h2 data-zh="只需本人选择" data-ja="本人が選ぶ項目">只需本人选择</h2><span class="num">02</span></div>
+        <p class="desc" data-zh="这些问题会直接影响岗位匹配和是否能投递。" data-ja="求人とのマッチングと応募可否に直結する項目です。">这些问题会直接影响岗位匹配和是否能投递。</p>
+        <div class="option-grid">
+          <div class="field option" data-field="visa_status" data-label-zh="目前签证 / 在留状态" data-label-ja="現在の在留資格"><label><span data-zh="目前签证 / 在留状态" data-ja="現在の在留資格">目前签证 / 在留状态</span></label><select name="visa_status"><option value="" data-zh="待本人选择" data-ja="本人が選択">待本人选择</option><option value="china" data-zh="目前在中国" data-ja="現在中国">目前在中国</option><option value="japan" data-zh="已有日本在留资格" data-ja="日本の在留資格あり">已有日本在留资格</option></select></div>
+          <div class="field option" data-field="sponsorship" data-label-zh="是否需要签证协助" data-label-ja="ビザ支援"><label><span data-zh="是否需要签证协助" data-ja="ビザ支援">是否需要签证协助</span></label><select name="sponsorship"><option value="" data-zh="待本人选择" data-ja="本人が選択">待本人选择</option><option value="yes" data-zh="需要" data-ja="必要">需要</option><option value="no" data-zh="不需要" data-ja="不要">不需要</option></select></div>
+          <div class="field option" data-field="travel" data-label-zh="出差 / 长期驻场" data-label-ja="出張・長期出張"><label><span data-zh="出差 / 长期驻场" data-ja="出張・長期出張">出差 / 长期驻场</span></label><select name="travel"><option value="" data-zh="待本人选择" data-ja="本人が選択">待本人选择</option><option value="yes" data-zh="可以，1～3 个月也可" data-ja="可、1～3か月も可">可以，1～3 个月也可</option><option value="limited" data-zh="有限制" data-ja="条件あり">有限制</option><option value="no" data-zh="不可以" data-ja="不可">不可以</option></select></div>
+          <div class="field option" data-field="location" data-label-zh="工作地点 / 搬迁" data-label-ja="勤務地・転居"><label><span data-zh="工作地点 / 搬迁" data-ja="勤務地・転居">工作地点 / 搬迁</span></label><select name="location"><option value="" data-zh="待本人选择" data-ja="本人が選択">待本人选择</option><option value="anywhere" data-zh="全国可" data-ja="全国可">全国可</option><option value="limited" data-zh="有限制" data-ja="条件あり">有限制</option><option value="fixed" data-zh="固定地区" data-ja="勤務地限定">固定地区</option></select></div>
+          <div class="field option" data-field="start_date" data-label-zh="最快入职 / 赴日时间" data-label-ja="入社・渡日可能時期"><label><span data-zh="最快入职 / 赴日时间" data-ja="入社・渡日可能時期">最快入职 / 赴日时间</span></label><input name="start_date" placeholder="例如：签证后 1 个月"></div>
+          <div class="field option" data-field="salary" data-label-zh="期望年薪" data-label-ja="希望年収"><label><span data-zh="期望年薪" data-ja="希望年収">期望年薪</span></label><input name="salary" placeholder="例如：400～500 万日元"></div>
         </div>
-      </section>
-
-      <section class="form-section" data-section-title-zh="技术栈与故障处理" data-section-title-ja="技術スキル・トラブル対応">
-        <div class="section-head"><h2 data-zh="技术栈与故障处理" data-ja="技術スキル・トラブル対応">技术栈与故障处理</h2><span class="section-number">03</span></div>
-        <p class="section-desc" data-zh="只填写真实做过、能在面试中解释的内容；可以写熟练程度和使用年数。" data-ja="実際に経験し、面接で説明できる内容だけを記入してください。経験年数や習熟度も記載できます。">只填写真实做过、能在面试中解释的内容；可以写熟练程度和使用年数。</p>
-        <div class="note-box" data-zh="下面的每项必须由本人选择：不会、做过一点、可独立完成或熟练。AI 不得根据“做过 ULVAC / Canon”自行推断 PLC、PVD、真空泵等技能。" data-ja="以下は本人が必ず選択してください。「経験なし・一部経験・独立対応・熟練」を明示し、AIがULVACやCanonの経験からPLC・PVD・真空ポンプ等を推測しないようにします。">下面的每项必须由本人选择：不会、做过一点、可独立完成或熟练。AI 不得根据“做过 ULVAC / Canon”自行推断 PLC、PVD、真空泵等技能。</div>
-        <h3 data-zh="机械 / 电气 / 半导体技能选项" data-ja="機械・電気・半導体スキルの選択">机械 / 电气 / 半导体技能选项</h3>
-        <div class="skill-matrix">
-          <div class="field skill-row" data-field="skill_mechanical_drawing" data-label-zh="机械图纸" data-label-ja="機械図面"><label><span data-zh="机械图纸" data-ja="機械図面">机械图纸</span></label><select name="skill_mechanical_drawing"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_assembly_drawing" data-label-zh="装配图 / BOM" data-label-ja="組立図・BOM"><label><span data-zh="装配图 / BOM" data-ja="組立図・BOM">装配图 / BOM</span></label><select name="skill_assembly_drawing"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_hand_tools" data-label-zh="手工具 / 扭矩工具" data-label-ja="手工具・トルク工具"><label><span data-zh="手工具 / 扭矩工具" data-ja="手工具・トルク工具">手工具 / 扭矩工具</span></label><select name="skill_hand_tools"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_measurement" data-label-zh="水平仪 / 卡尺 / 千分尺" data-label-ja="水平器・ノギス・マイクロメータ"><label><span data-zh="水平仪 / 卡尺 / 千分尺" data-ja="水平器・ノギス・マイクロメータ">水平仪 / 卡尺 / 千分尺</span></label><select name="skill_measurement"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_alignment" data-label-zh="Alignment / Leveling" data-label-ja="アライメント・レベリング"><label><span data-zh="Alignment / Leveling" data-ja="アライメント・レベリング">Alignment / Leveling</span></label><select name="skill_alignment"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_multimeter" data-label-zh="万用表 / 测量仪器" data-label-ja="テスター・測定器"><label><span data-zh="万用表 / 测量仪器" data-ja="テスター・測定器">万用表 / 测量仪器</span></label><select name="skill_multimeter"><option value="independent" selected data-zh="可独立完成（履历已确认）" data-ja="独立対応可（履歴書で確認済み）">可独立完成（履历已确认）</option><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_electrical_drawing" data-label-zh="电气图纸 / 配线" data-label-ja="電気図面・配線"><label><span data-zh="电气图纸 / 配线" data-ja="電気図面・配線">电气图纸 / 配线</span></label><select name="skill_electrical_drawing"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_io_check" data-label-zh="I/O Check / Sensor" data-label-ja="I/Oチェック・センサー"><label><span data-zh="I/O Check / Sensor" data-ja="I/Oチェック・センサー">I/O Check / Sensor</span></label><select name="skill_io_check"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_motor_servo_plc" data-label-zh="Motor / Servo / PLC" data-label-ja="モーター・サーボ・PLC"><label><span data-zh="Motor / Servo / PLC" data-ja="モーター・サーボ・PLC">Motor / Servo / PLC</span></label><select name="skill_motor_servo_plc"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_vacuum" data-label-zh="真空系统 / Pump / Valve" data-label-ja="真空系・Pump・Valve"><label><span data-zh="真空系统 / Pump / Valve" data-ja="真空系・Pump・Valve">真空系统 / Pump / Valve</span></label><select name="skill_vacuum"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_cvd_pvd_etch" data-label-zh="CVD / PVD / Etch" data-label-ja="CVD・PVD・Etch"><label><span data-zh="CVD / PVD / Etch" data-ja="CVD・PVD・Etch">CVD / PVD / Etch</span></label><select name="skill_cvd_pvd_etch"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_lithography" data-label-zh="Lithography / Exposure" data-label-ja="Lithography・Exposure"><label><span data-zh="Lithography / Exposure" data-ja="Lithography・Exposure">Lithography / Exposure</span></label><select name="skill_lithography"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="参与过设备安装" data-ja="装置据付を経験">参与过设备安装</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_cleanroom" data-label-zh="Clean Room" data-label-ja="クリーンルーム"><label><span data-zh="Clean Room" data-ja="クリーンルーム">Clean Room</span></label><select name="skill_cleanroom"><option value="experienced" selected data-zh="有经验（履历已确认）" data-ja="経験あり（履歴書で確認済み）">有经验（履历已确认）</option><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="没有" data-ja="経験なし">没有</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option></select></div>
-          <div class="field skill-row" data-field="skill_troubleshooting" data-label-zh="Troubleshooting / Root Cause" data-label-ja="トラブルシューティング・原因分析"><label><span data-zh="Troubleshooting / Root Cause" data-ja="トラブルシューティング・原因分析">Troubleshooting / Root Cause</span></label><select name="skill_troubleshooting"><option value="independent" selected data-zh="可独立完成（履历已确认）" data-ja="独立対応可（履歴書で確認済み）">可独立完成（履历已确认）</option><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="skill_maintenance_repair" data-label-zh="Maintenance / 部件更换 / 报告" data-label-ja="保守・部品交換・報告書"><label><span data-zh="Maintenance / 部件更换 / 报告" data-ja="保守・部品交換・報告書">Maintenance / 部件更换 / 报告</span></label><select name="skill_maintenance_repair"><option value="independent" selected data-zh="可独立完成（履历已确认）" data-ja="独立対応可（履歴書で確認済み）">可独立完成（履历已确认）</option><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-        </div>
-        <h3 data-zh="设备启动流程选项" data-ja="装置立上げ工程の選択">设备启动流程选项</h3>
-        <div class="skill-matrix">
-          <div class="field skill-row" data-field="process搬入" data-label-zh="设备搬入" data-label-ja="搬入"><label><span data-zh="设备搬入" data-ja="搬入">设备搬入</span></label><select name="process搬入"><option value="experienced" selected data-zh="有经验（履历已确认）" data-ja="経験あり（履歴書で確認済み）">有经验（履历已确认）</option><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="process据付" data-label-zh="据付 / 安装" data-label-ja="据付・設置"><label><span data-zh="据付 / 安装" data-ja="据付・設置">据付 / 安装</span></label><select name="process据付"><option value="experienced" selected data-zh="有经验（履历已确认）" data-ja="経験あり（履歴書で確認済み）">有经验（履历已确认）</option><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="process组装" data-label-zh="机械组装" data-label-ja="機械組立"><label><span data-zh="机械组装" data-ja="機械組立">机械组装</span></label><select name="process组装"><option value="experienced" selected data-zh="有经验（履历已确认）" data-ja="経験あり（履歴書で確認済み）">有经验（履历已确认）</option><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="process配线" data-label-zh="配线" data-label-ja="配線"><label><span data-zh="配线" data-ja="配線">配线</span></label><select name="process配线"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="processLeveling" data-label-zh="Leveling / Adjustment" data-label-ja="レベリング・調整"><label><span data-zh="Leveling / Adjustment" data-ja="レベリング・調整">Leveling / Adjustment</span></label><select name="processLeveling"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="process试运行" data-label-zh="试运行 / 动作确认" data-label-ja="試運転・動作確認"><label><span data-zh="试运行 / 动作确认" data-ja="試運転・動作確認">试运行 / 动作确认</span></label><select name="process试运行"><option value="experienced" selected data-zh="有经验（履历已确认）" data-ja="経験あり（履歴書で確認済み）">有经验（履历已确认）</option><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="processメカラン" data-label-zh="メカラン / 联动测试" data-label-ja="メカラン・連動試験"><label><span data-zh="メカラン / 联动测试" data-ja="メカラン・連動試験">メカラン / 联动测试</span></label><select name="processメカラン"><option value="experienced" selected data-zh="有经验（JSW 履历已确认）" data-ja="経験あり（JSW履歴書で確認済み）">有经验（JSW 履历已确认）</option><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="some" data-zh="做过一点" data-ja="一部経験">做过一点</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-          <div class="field skill-row" data-field="process验收" data-label-zh="客户验收 / 交付" data-label-ja="顧客検収・引渡し"><label><span data-zh="客户验收 / 交付" data-ja="顧客検収・引渡し">客户验收 / 交付</span></label><select name="process验收"><option value="" data-zh="待确认" data-ja="要確認">待确认</option><option value="no" data-zh="不会" data-ja="経験なし">不会</option><option value="some" data-zh="参与过" data-ja="参加経験">参与过</option><option value="independent" data-zh="可独立完成" data-ja="独立対応">可独立完成</option><option value="proficient" data-zh="熟练" data-ja="熟練">熟练</option></select></div>
-        </div>
-        <div class="fields">
-          <div class="field full" data-field="equipment" data-label-zh="设备 / 产品类型" data-label-ja="設備・製品"><label><span data-zh="设备 / 产品类型" data-ja="設備・製品">设备 / 产品类型</span></label><textarea name="equipment" data-placeholder-zh="例如：露光装置、真空蒸镀装置、锂电池薄膜设备、涂布设备；品牌、型号、数量。" data-placeholder-ja="例：露光装置、真空蒸着装置、リチウム電池フィルム設備、塗工設備。メーカー・型式・台数。" placeholder="例如：露光装置、真空蒸镀装置、锂电池薄膜设备、涂布设备；品牌、型号、数量。"></textarea></div>
-          <div class="field" data-field="processes" data-label-zh="做过的工艺流程" data-label-ja="対応工程"><label><span data-zh="做过的工艺流程" data-ja="対応工程">做过的工艺流程</span></label><textarea name="processes" data-placeholder-zh="搬入、组装、据付、找平、定位、调试、试运行、联动测试、交付等。" data-placeholder-ja="搬入、組立、据付、芯出し、レベル調整、調整、試運転、連動試験、引渡しなど。" placeholder="搬入、组装、据付、找平、定位、调试、试运行、联动测试、交付等。"></textarea></div>
-          <div class="field" data-field="drawings" data-label-zh="图纸与精度调整" data-label-ja="図面・精度調整"><label><span data-zh="图纸与精度调整" data-ja="図面・精度調整">图纸与精度调整</span></label><textarea name="drawings" data-placeholder-zh="机械图、装配图、配管图、电气图；水平、位置、间隙、精度确认等。" data-placeholder-ja="機械図・組立図・配管図・電気図、レベル・位置・クリアランス・精度確認など。" placeholder="机械图、装配图、配管图、电气图；水平、位置、间隙、精度确认等。"></textarea></div>
-          <div class="field" data-field="instruments" data-label-zh="测量与诊断工具" data-label-ja="測定・診断工具"><label><span data-zh="测量与诊断工具" data-ja="測定・診断工具">测量与诊断工具</span></label><textarea name="instruments" data-placeholder-zh="例如：万用表、示波器、水平仪、激光测量器、扭力工具；分别做到什么程度。" data-placeholder-ja="例：テスター、オシロスコープ、水平器、レーザー測定器、トルク工具など。" placeholder="例如：万用表、示波器、水平仪、激光测量器、扭力工具；分别做到什么程度。"></textarea></div>
-          <div class="field" data-field="electrical" data-label-zh="电气 / 控制相关" data-label-ja="電気・制御関連"><label><span data-zh="电气 / 控制相关" data-ja="電気・制御関連">电气 / 控制相关</span></label><textarea name="electrical" data-placeholder-zh="是否做过接线、I/O Check、传感器、联动信号、PLC 周边、真空系统等。" data-placeholder-ja="配線、I/Oチェック、センサー、連動信号、PLC周辺、真空系などの経験。" placeholder="是否做过接线、I/O Check、传感器、联动信号、PLC 周边、真空系统等。"></textarea></div>
-          <div class="field" data-field="troubleshooting" data-label-zh="典型故障案例" data-label-ja="代表的なトラブル対応"><label><span data-zh="典型故障案例" data-ja="代表的なトラブル対応">典型故障案例</span></label><textarea name="troubleshooting" data-placeholder-zh="现象 → 如何切分原因 → 使用什么工具 → 更换/修复什么 → 结果。至少写 1～2 个。" data-placeholder-ja="現象 → 原因切り分け → 使用工具 → 修理・交換 → 結果。1～2件以上。" placeholder="现象 → 如何切分原因 → 使用什么工具 → 更换/修复什么 → 结果。至少写 1～2 个。"></textarea></div>
-          <div class="field full" data-field="tools_software" data-label-zh="软件、工具与其他技能" data-label-ja="ソフト・その他のスキル"><label><span data-zh="软件、工具与其他技能" data-ja="ソフト・その他のスキル">软件、工具与其他技能</span></label><textarea name="tools_software" data-placeholder-zh="CAD、Excel、作业记录系统、照片记录、报告书编写等。不会的可以写无。" data-placeholder-ja="CAD、Excel、作業記録システム、写真記録、報告書作成など。未経験は「なし」で可。" placeholder="CAD、Excel、作业记录系统、照片记录、报告书编写等。不会的可以写无。"></textarea></div>
-        </div>
-      </section>
-
-      <section class="form-section" data-section-title-zh="项目规模与现场管理" data-section-title-ja="プロジェクト規模・現場管理">
-        <div class="section-head"><h2 data-zh="项目规模与现场管理" data-ja="プロジェクト規模・現場管理">项目规模与现场管理</h2><span class="section-number">04</span></div>
-        <p class="section-desc" data-zh="数字会显著增强经验型工程师的可信度；不确定就写大致范围。" data-ja="経験者としての説得力を高める項目です。正確な数字が難しければ概数で記入してください。">数字会显著增强经验型工程师的可信度；不确定就写大致范围。</p>
-        <div class="fields">
-          <div class="field" data-field="equipment_count" data-label-zh="参与过的设备数量" data-label-ja="担当設備台数"><label><span data-zh="参与过的设备数量" data-ja="担当設備台数">参与过的设备数量</span></label><input name="equipment_count" type="text" data-placeholder-zh="例如：累计 10 台以上 / 待确认" data-placeholder-ja="例：累計10台以上 / 要確認" placeholder="例如：累计 10 台以上 / 待确认"></div>
-          <div class="field" data-field="project_duration" data-label-zh="最长项目周期" data-label-ja="最長プロジェクト期間"><label><span data-zh="最长项目周期" data-ja="最長プロジェクト期間">最长项目周期</span></label><input name="project_duration" type="text" data-placeholder-zh="例如：6 个月 / 1 年" data-placeholder-ja="例：6か月 / 1年" placeholder="例如：6 个月 / 1 年"></div>
-          <div class="field" data-field="team_size" data-label-zh="协力公司或团队人数" data-label-ja="協力会社・チーム人数"><label><span data-zh="协力公司或团队人数" data-ja="協力会社・チーム人数">协力公司或团队人数</span></label><input name="team_size" type="text" data-placeholder-zh="例如：指导 5 名协力人员" data-placeholder-ja="例：協力会社5名を指導" placeholder="例如：指导 5 名协力人员"></div>
-          <div class="field" data-field="line_scale" data-label-zh="最大生产线 / 项目规模" data-label-ja="最大ライン・規模"><label><span data-zh="最大生产线 / 项目规模" data-ja="最大ライン・規模">最大生产线 / 项目规模</span></label><input name="line_scale" type="text" data-placeholder-zh="设备数量、产线长度、客户工厂规模等" data-placeholder-ja="設備数、ライン長、顧客工場規模など" placeholder="设备数量、产线长度、客户工厂规模等"></div>
-          <div class="field full" data-field="management" data-label-zh="现场管理职责" data-label-ja="現場管理の担当範囲"><label><span data-zh="现场管理职责" data-ja="現場管理の担当範囲">现场管理职责</span></label><textarea name="management" data-placeholder-zh="作业指示、进度、安全、质量、客户汇报、协力公司协调、验收交付中实际负责哪些。" data-placeholder-ja="作業指示、進捗、安全、品質、顧客報告、協力会社調整、検収・引渡しの担当範囲。" placeholder="作业指示、进度、安全、质量、客户汇报、协力公司协调、验收交付中实际负责哪些。"></textarea></div>
-          <div class="field full" data-field="achievement" data-label-zh="最能体现能力的项目成果" data-label-ja="能力を示せる実績"><label><span data-zh="最能体现能力的项目成果" data-ja="能力を示せる実績">最能体现能力的项目成果</span></label><textarea name="achievement" data-placeholder-zh="例如：提前完成启动、解决关键故障、完成客户验收、降低返工等。" data-placeholder-ja="例：立上げ短縮、重大不具合解決、顧客検収完了、手戻り削減など。" placeholder="例如：提前完成启动、解决关键故障、完成客户验收、降低返工等。"></textarea></div>
-        </div>
-      </section>
-
-      <section class="form-section" data-section-title-zh="沟通与职业时间线" data-section-title-ja="コミュニケーション・職歴">
-        <div class="section-head"><h2 data-zh="沟通与职业时间线" data-ja="コミュニケーション・職歴">沟通与职业时间线</h2><span class="section-number">05</span></div>
-        <p class="section-desc" data-zh="用于把早期电子维修经验和后期设备工程经验连成一条可信的职业轨迹。" data-ja="初期の電子機器サービス経験から設備エンジニアへの流れを明確にします。">用于把早期电子维修经验和后期设备工程经验连成一条可信的职业轨迹。</p>
-        <div class="fields">
-          <div class="field full" data-field="communication" data-label-zh="日语现场沟通场景" data-label-ja="日本語での現場対応"><label><span data-zh="日语现场沟通场景" data-ja="日本語での現場対応">日语现场沟通场景</span></label><textarea name="communication" data-placeholder-zh="能否参加早会、汇报进度、说明故障、确认手顺、给协力公司下指示、和客户沟通。" data-placeholder-ja="朝礼、進捗報告、不具合説明、手順確認、協力会社への指示、顧客対応など。" placeholder="能否参加早会、汇报进度、说明故障、确认手顺、给协力公司下指示、和客户沟通。"></textarea></div>
-          <div class="field full" data-field="career_gap" data-label-zh="2018年7月～2021年8月经历" data-label-ja="2018年7月～2021年8月の経歴"><label><span data-zh="2018年7月～2021年8月经历" data-ja="2018年7月～2021年8月の経歴">2018年7月～2021年8月经历</span></label><textarea name="career_gap" data-placeholder-zh="工作、培训、个人原因或其他情况；不方便写可以写“面试说明”。" data-placeholder-ja="就業、研修、個人的事情など。詳細は面接で説明でも可。" placeholder="工作、培训、个人原因或其他情况；不方便写可以写“面试说明”。"></textarea></div>
-          <div class="field" data-field="certifications" data-label-zh="资格证书 / 培训" data-label-ja="資格・研修"><label><span data-zh="资格证书 / 培训" data-ja="資格・研修">资格证书 / 培训</span></label><textarea name="certifications" data-placeholder-zh="JLPT 以外的证书、设备培训、安全培训等。" data-placeholder-ja="JLPT以外の資格、設備研修、安全教育など。" placeholder="JLPT 以外的证书、设备培训、安全培训等。"></textarea></div>
-          <div class="field" data-field="other_notes" data-label-zh="其他需要说明的事项" data-label-ja="その他の確認事項"><label><span data-zh="其他需要说明的事项" data-ja="その他の確認事項">其他需要说明的事项</span></label><textarea name="other_notes" data-placeholder-zh="例如：原始证件照、健康限制、期望薪资、可提供的证明材料。" data-placeholder-ja="例：証明写真、健康上の制約、希望年収、提出可能な証明資料など。" placeholder="例如：原始证件照、健康限制、期望薪资、可提供的证明材料。"></textarea></div>
-          <div class="field full" data-field="strengths" data-label-zh="希望重点强调的优势" data-label-ja="強調したい強み"><label><span data-zh="希望重点强调的优势" data-ja="強調したい強み">希望重点强调的优势</span></label><div class="checks">
-            <label class="check"><input type="checkbox" name="strengths" value="startup"><span data-zh="设备启动 / 立上げ" data-ja="設備立上げ">设备启动 / 立上げ</span></label>
-            <label class="check"><input type="checkbox" name="strengths" value="troubleshooting"><span data-zh="故障诊断" data-ja="トラブル対応">故障诊断</span></label>
-            <label class="check"><input type="checkbox" name="strengths" value="cleanroom"><span data-zh="洁净室作业" data-ja="クリーンルーム">洁净室作业</span></label>
-            <label class="check"><input type="checkbox" name="strengths" value="line"><span data-zh="生产线联动" data-ja="生産ライン連動">生产线联动</span></label>
-            <label class="check"><input type="checkbox" name="strengths" value="leadership"><span data-zh="协力公司指导" data-ja="協力会社指導">协力公司指导</span></label>
-            <label class="check"><input type="checkbox" name="strengths" value="customer"><span data-zh="客户沟通" data-ja="顧客対応">客户沟通</span></label>
-          </div></div>
-        </div>
-      </section>
-
-      <section class="form-section" data-section-title-zh="项目经历手写表单" data-section-title-ja="プロジェクト経験 手書きフォーム">
-        <div class="section-head"><h2 data-zh="项目经历手写表单" data-ja="プロジェクト経験 手書きフォーム">项目经历手写表单</h2><span class="section-number">06</span></div>
-        <p class="section-desc" data-zh="以下项目已根据现有履历预填；请补充设备台数、人员、故障和结果。打印后也可以手写，再把内容录回表单。" data-ja="既存の履歴書をもとに入力済みです。台数・人数・不具合・結果を補足してください。印刷して手書きし、後からフォームへ転記しても構いません。">以下项目已根据现有履历预填；请补充设备台数、人员、故障和结果。打印后也可以手写，再把内容录回表单。</p>
-        <div class="note-box" data-zh="项目事实优先级：公司 / 客户现场关系 → 设备 → 负责流程 → 团队与规模 → 故障 → 结果。未知项写“待确认”，不要让 Agent 猜。" data-ja="プロジェクト事実の順序：所属会社・顧客現場 → 設備 → 担当工程 → チーム・規模 → 不具合 → 結果。不明な項目は「要確認」とし、Agentに推測させないでください。">项目事实优先级：公司 / 客户现场关系 → 设备 → 负责流程 → 团队与规模 → 故障 → 结果。未知项写“待确认”，不要让 Agent 猜。</div>
-
-        <article class="project-card">
-          <div class="project-head"><h3 data-zh="日本制钢所（JSW）锂电池薄膜设备" data-ja="日本製鋼所（JSW）リチウム電池フィルム設備">日本制钢所（JSW）锂电池薄膜设备</h3><span class="project-index">PROJECT 01</span></div>
-          <div class="fields">
-            <div class="field" data-field="project1_company" data-label-zh="所属 / 项目关系" data-label-ja="所属・プロジェクト関係"><label><span data-zh="所属 / 项目关系" data-ja="所属・プロジェクト関係">所属 / 项目关系</span></label><input name="project1_company" value="镇江晟德精密机械有限公司；JSW 相关客户工厂" placeholder="公司与客户现场关系"></div>
-            <div class="field" data-field="project1_period" data-label-zh="时间" data-label-ja="期間"><label><span data-zh="时间" data-ja="期間">时间</span></label><input name="project1_period" value="2022.01–2024.03" placeholder="YYYY.MM–YYYY.MM"></div>
-            <div class="field" data-field="project1_equipment" data-label-zh="设备 / 产线" data-label-ja="設備・ライン"><label><span data-zh="设备 / 产线" data-ja="設備・ライン">设备 / 产线</span></label><input name="project1_equipment" value="锂电池薄膜制造设备" placeholder="设备型号、台数"></div>
-            <div class="field" data-field="project1_location" data-label-zh="地点" data-label-ja="場所"><label><span data-zh="地点" data-ja="場所">地点</span></label><input name="project1_location" placeholder="客户工厂 / 城市 / 国家"></div>
-            <div class="field full" data-field="project1_role" data-label-zh="负责流程与职责" data-label-ja="担当工程・役割"><label><span data-zh="负责流程与职责" data-ja="担当工程・役割">负责流程与职责</span></label><textarea class="handwrite" name="project1_role">据付・メカラン・試運転；協力会社への作業指示・現場管理；不具合対応、部品修理・交換；生産ライン全体の連動試験・設備調整。</textarea></div>
-            <div class="field" data-field="project1_people" data-label-zh="人员 / 规模" data-label-ja="人数・規模"><label><span data-zh="人员 / 规模" data-ja="人数・規模">人员 / 规模</span></label><textarea class="handwrite" name="project1_people" placeholder="设备台数、协力公司人数、产线规模、工期"></textarea></div>
-            <div class="field" data-field="project1_issue_result" data-label-zh="典型故障与结果" data-label-ja="不具合・結果"><label><span data-zh="典型故障与结果" data-ja="不具合・結果">典型故障与结果</span></label><textarea class="handwrite" name="project1_issue_result" placeholder="现象、定位、处理、验收 / 结果"></textarea></div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head"><h3 data-zh="ULVAC 真空蒸镀装置" data-ja="ULVAC 真空蒸着装置">ULVAC 真空蒸镀装置</h3><span class="project-index">PROJECT 02</span></div>
-          <div class="fields">
-            <div class="field" data-field="project2_company" data-label-zh="所属 / 项目关系" data-label-ja="所属・プロジェクト関係"><label><span data-zh="所属 / 项目关系" data-ja="所属・プロジェクト関係">所属 / 项目关系</span></label><input name="project2_company" value="镇江晟德精密机械有限公司；ULVAC 相关据点及客户工厂" placeholder="公司与客户现场关系"></div>
-            <div class="field" data-field="project2_period" data-label-zh="时间" data-label-ja="期間"><label><span data-zh="时间" data-ja="期間">时间</span></label><input name="project2_period" value="2024.02–2025.01" placeholder="YYYY.MM–YYYY.MM"></div>
-            <div class="field" data-field="project2_equipment" data-label-zh="设备 / 系统" data-label-ja="設備・システム"><label><span data-zh="设备 / 系统" data-ja="設備・システム">设备 / 系统</span></label><input name="project2_equipment" value="真空蒸镀装置（具体型号待确认）" placeholder="设备型号、PVD / 真空系统"></div>
-            <div class="field" data-field="project2_location" data-label-zh="地点" data-label-ja="場所"><label><span data-zh="地点" data-ja="場所">地点</span></label><input name="project2_location" placeholder="客户工厂 / 城市 / 国家"></div>
-            <div class="field full" data-field="project2_role" data-label-zh="负责流程与职责" data-label-ja="担当工程・役割"><label><span data-zh="负责流程与职责" data-ja="担当工程・役割">负责流程与职责</span></label><textarea class="handwrite" name="project2_role">真空蒸镀装置の組立・解体・移設・据付・調整；お客様工場での据付・立上げ・検査；安定稼働の確保。</textarea></div>
-            <div class="field" data-field="project2_people" data-label-zh="人员 / 规模" data-label-ja="人数・規模"><label><span data-zh="人员 / 规模" data-ja="人数・規模">人员 / 规模</span></label><textarea class="handwrite" name="project2_people" placeholder="设备台数、协力公司人数、工期"></textarea></div>
-            <div class="field" data-field="project2_issue_result" data-label-zh="典型故障与结果" data-label-ja="不具合・結果"><label><span data-zh="典型故障与结果" data-ja="不具合・結果">典型故障与结果</span></label><textarea class="handwrite" name="project2_issue_result" placeholder="真空 / Pump / Valve / 其他故障，处理结果"></textarea></div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head"><h3 data-zh="Canon 露光装置" data-ja="Canon 露光装置">Canon 露光装置</h3><span class="project-index">PROJECT 03</span></div>
-          <div class="fields">
-            <div class="field" data-field="project3_company" data-label-zh="所属 / 项目关系" data-label-ja="所属・プロジェクト関係"><label><span data-zh="所属 / 项目关系" data-ja="所属・プロジェクト関係">所属 / 项目关系</span></label><input name="project3_company" value="佳能光学设备（上海）有限公司（Canon）" placeholder="公司与客户现场关系"></div>
-            <div class="field" data-field="project3_period" data-label-zh="时间" data-label-ja="期間"><label><span data-zh="时间" data-ja="期間">时间</span></label><input name="project3_period" value="2021.09–2022.01" placeholder="YYYY.MM–YYYY.MM"></div>
-            <div class="field" data-field="project3_equipment" data-label-zh="设备 / 模块" data-label-ja="設備・モジュール"><label><span data-zh="设备 / 模块" data-ja="設備・モジュール">设备 / 模块</span></label><input name="project3_equipment" value="露光装置（具体型号、模块待确认）" placeholder="设备型号、负责模块"></div>
-            <div class="field" data-field="project3_location" data-label-zh="地点" data-label-ja="場所"><label><span data-zh="地点" data-ja="場所">地点</span></label><input name="project3_location" value="绵阳 HKC 工厂" placeholder="客户工厂 / 城市 / 国家"></div>
-            <div class="field full" data-field="project3_role" data-label-zh="负责流程与职责" data-label-ja="担当工程・役割"><label><span data-zh="负责流程与职责" data-ja="担当工程・役割">负责流程与职责</span></label><textarea class="handwrite" name="project3_role">露光装置の搬入・据付；ベース高さ・位置確認；スペーサー・防振ゴムの設置；手順書に基づく機械部品の組立。</textarea></div>
-            <div class="field" data-field="project3_people" data-label-zh="人员 / 规模" data-label-ja="人数・規模"><label><span data-zh="人员 / 规模" data-ja="人数・規模">人员 / 规模</span></label><textarea class="handwrite" name="project3_people" placeholder="安装台数、模块、洁净室时长"></textarea></div>
-            <div class="field" data-field="project3_issue_result" data-label-zh="典型故障与结果" data-label-ja="不具合・結果"><label><span data-zh="典型故障与结果" data-ja="不具合・結果">典型故障与结果</span></label><textarea class="handwrite" name="project3_issue_result" placeholder="是否参与 Leveling、Alignment、调试或验收"></textarea></div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head"><h3 data-zh="Hirano Tecseed 涂布设备" data-ja="Hirano Tecseed 塗工設備">Hirano Tecseed 涂布设备</h3><span class="project-index">PROJECT 04</span></div>
-          <div class="fields">
-            <div class="field" data-field="project4_company" data-label-zh="所属 / 项目关系" data-label-ja="所属・プロジェクト関係"><label><span data-zh="所属 / 项目关系" data-ja="所属・プロジェクト関係">所属 / 项目关系</span></label><input name="project4_company" value="善威科技发展（上海）有限公司大连分公司（テクノプロ）" placeholder="公司与客户现场关系"></div>
-            <div class="field" data-field="project4_period" data-label-zh="时间" data-label-ja="期間"><label><span data-zh="时间" data-ja="期間">时间</span></label><input name="project4_period" value="2025.01–现在" placeholder="YYYY.MM–现在"></div>
-            <div class="field" data-field="project4_equipment" data-label-zh="设备 / 工艺" data-label-ja="設備・工程"><label><span data-zh="设备 / 工艺" data-ja="設備・工程">设备 / 工艺</span></label><input name="project4_equipment" value="涂布设备" placeholder="设备型号、工艺"></div>
-            <div class="field" data-field="project4_location" data-label-zh="地点" data-label-ja="場所"><label><span data-zh="地点" data-ja="場所">地点</span></label><input name="project4_location" value="Hirano Tecseed 本社及相关客户工厂" placeholder="客户工厂 / 城市 / 国家"></div>
-            <div class="field full" data-field="project4_role" data-label-zh="负责流程与职责" data-label-ja="担当工程・役割"><label><span data-zh="负责流程与职责" data-ja="担当工程・役割">负责流程与职责</span></label><textarea class="handwrite" name="project4_role">塗布設備の組立・据付・調整・試運転；設備の立上げ、動作確認および設備調整；設備不具合対応および原因確認。</textarea></div>
-            <div class="field" data-field="project4_people" data-label-zh="人员 / 规模" data-label-ja="人数・規模"><label><span data-zh="人员 / 规模" data-ja="人数・規模">人员 / 规模</span></label><textarea class="handwrite" name="project4_people" placeholder="项目周期、设备台数、团队人数"></textarea></div>
-            <div class="field" data-field="project4_issue_result" data-label-zh="典型故障与结果" data-label-ja="不具合・結果"><label><span data-zh="典型故障与结果" data-ja="不具合・結果">典型故障与结果</span></label><textarea class="handwrite" name="project4_issue_result" placeholder="故障现象、原因确认、试运行 / 交付结果"></textarea></div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head"><h3 data-zh="长虹电子设备售后与维修" data-ja="長虹 電子機器アフターサービス">长虹电子设备售后与维修</h3><span class="project-index">PROJECT 05</span></div>
-          <div class="fields">
-            <div class="field" data-field="project5_company" data-label-zh="所属 / 项目关系" data-label-ja="所属・プロジェクト関係"><label><span data-zh="所属 / 项目关系" data-ja="所属・プロジェクト関係">所属 / 项目关系</span></label><input name="project5_company" value="四川快益点电器服务连锁有限公司（长虹集团）／长虹电器股份有限公司" placeholder="所属公司"></div>
-            <div class="field" data-field="project5_period" data-label-zh="时间" data-label-ja="期間"><label><span data-zh="时间" data-ja="期間">时间</span></label><input name="project5_period" value="2006.04–2018.06" placeholder="YYYY.MM–YYYY.MM"></div>
-            <div class="field" data-field="project5_equipment" data-label-zh="设备 / 产品" data-label-ja="製品・設備"><label><span data-zh="设备 / 产品" data-ja="製品・設備">设备 / 产品</span></label><input name="project5_equipment" value="电视及家电产品、电子部件" placeholder="产品类型"></div>
-            <div class="field" data-field="project5_location" data-label-zh="地点" data-label-ja="場所"><label><span data-zh="地点" data-ja="場所">地点</span></label><input name="project5_location" value="绵阳本社、广东分公司" placeholder="工作地点"></div>
-            <div class="field full" data-field="project5_role" data-label-zh="负责流程与职责" data-label-ja="担当工程・役割"><label><span data-zh="负责流程与职责" data-ja="担当工程・役割">负责流程与职责</span></label><textarea class="handwrite" name="project5_role">故障原因的一次诊断；使用测量仪器、测试器定位不良点；电子部品修理・更换；BGA部品更换・实装；客户技术支持、服务据点协作、技术人员安排・管理。</textarea></div>
-            <div class="field" data-field="project5_people" data-label-zh="人员 / 规模" data-label-ja="人数・規模"><label><span data-zh="人员 / 规模" data-ja="人数・規模">人员 / 规模</span></label><textarea class="handwrite" name="project5_people" placeholder="维修量、据点人数、管理范围"></textarea></div>
-            <div class="field" data-field="project5_issue_result" data-label-zh="典型故障与结果" data-label-ja="不具合・結果"><label><span data-zh="典型故障与结果" data-ja="不具合・結果">典型故障与结果</span></label><textarea class="handwrite" name="project5_issue_result" placeholder="典型故障、BGA维修结果、客户支持结果"></textarea></div>
-          </div>
-        </article>
-      </section>
-
-      <section class="form-section" data-section-title-zh="第一波投递与 Agent 规则" data-section-title-ja="第一弾応募先・Agentルール">
-        <div class="section-head"><h2 data-zh="第一波投递与 Agent 规则" data-ja="第一弾応募先・Agentルール">第一波投递与 Agent 规则</h2><span class="section-number">07</span></div>
-        <p class="section-desc" data-zh="先跑通 3 家，再扩展到其他公司；每个 Submit 前必须人工确认。" data-ja="まず3社で流れを検証し、その後に拡張します。Submit前には必ず人が確認します。">先跑通 3 家，再扩展到其他公司；每个 Submit 前必须人工确认。</p>
-        <div class="field" data-field="target_companies" data-label-zh="第一波目标公司" data-label-ja="第一弾の対象会社"><label><span data-zh="第一波目标公司" data-ja="第一弾の対象会社">第一波目标公司</span></label><div class="target-list">
-          <label class="check"><input type="checkbox" name="target_companies" value="Crest" checked><span><strong>S</strong>　Crest Technologies</span></label>
-          <label class="check"><input type="checkbox" name="target_companies" value="BREXA" checked><span><strong>S</strong>　BREXA Technology</span></label>
-          <label class="check"><input type="checkbox" name="target_companies" value="KOKUSAI" checked><span><strong>S</strong>　KOKUSAI ELECTRIC Semiconductor Service</span></label>
-          <label class="check"><input type="checkbox" name="target_companies" value="HCLTech"><span><strong>A</strong>　HCLTech Japan</span></label>
-          <label class="check"><input type="checkbox" name="target_companies" value="ALTEN"><span><strong>A</strong>　ALTEN Japan</span></label>
-          <label class="check"><input type="checkbox" name="target_companies" value="Oxford"><span><strong>A</strong>　Oxford Instruments Japan</span></label>
-          <label class="check"><input type="checkbox" name="target_companies" value="Lam"><span><strong>A</strong>　Lam Research Japan</span></label>
-          <label class="check"><input type="checkbox" name="target_companies" value="MKS"><span><strong>A</strong>　MKS Japan</span></label>
-          <label class="check"><input type="checkbox" name="target_companies" value="Hitachi"><span><strong>B+</strong>　日立ハイテク系</span></label>
-          <label class="check"><input type="checkbox" name="target_companies" value="TEL"><span><strong>B+</strong>　東京エレクトロン系</span></label>
+        <div class="field" data-field="work_conditions" data-label-zh="工作条件" data-label-ja="勤務条件" style="margin-top:14px"><label><span data-zh="工作条件" data-ja="勤務条件">工作条件</span><em data-zh="可多选" data-ja="複数選択可">可多选</em></label><div class="checks">
+          <label class="check"><input type="checkbox" name="work_conditions" value="night"><span data-zh="夜班" data-ja="夜勤">夜班</span></label>
+          <label class="check"><input type="checkbox" name="work_conditions" value="shift"><span data-zh="轮班" data-ja="シフト">轮班</span></label>
+          <label class="check"><input type="checkbox" name="work_conditions" value="oncall"><span>On-call</span></label>
+          <label class="check"><input type="checkbox" name="work_conditions" value="cleanroom" checked><span data-zh="洁净室（履历已确认）" data-ja="クリーンルーム（確認済み）">洁净室（履历已确认）</span></label>
         </div></div>
-        <div class="fields" style="margin-top:16px">
-          <div class="field" data-field="application_mode" data-label-zh="投递方式" data-label-ja="応募方式"><label><span data-zh="投递方式" data-ja="応募方式">投递方式</span></label><select name="application_mode"><option value="human_review" selected data-zh="半自动：填表后人工确认 Submit" data-ja="半自動：入力後に人がSubmit確認">半自动：填表后人工确认 Submit</option><option value="manual" data-zh="完全人工" data-ja="完全手動">完全人工</option><option value="automatic" data-zh="自动（不建议）" data-ja="自動（非推奨）">自动（不建议）</option></select></div>
-          <div class="field" data-field="application_db" data-label-zh="applications.sqlite 管理" data-label-ja="applications.sqlite管理"><label><span data-zh="applications.sqlite 管理" data-ja="applications.sqlite管理">applications.sqlite 管理</span></label><select name="application_db"><option value="yes" selected data-zh="需要：按 job URL / Req ID 去重" data-ja="必要：job URL / Req IDで重複排除">需要：按 job URL / Req ID 去重</option><option value="no" data-zh="暂不需要" data-ja="不要">暂不需要</option></select></div>
+      </section>
+
+      <section class="section" data-section-title-zh="核心技能确认" data-section-title-ja="コアスキル確認">
+        <div class="section-title"><h2 data-zh="核心技能确认" data-ja="コアスキル確認">核心技能确认</h2><span class="num">03</span></div>
+        <p class="desc" data-zh="只勾选简历中已经有依据的内容；更细的 PLC、PVD、Pump、Valve 等不要让 AI 自动推断。" data-ja="履歴書で根拠がある項目だけを選択し、PLC・PVD・Pump・ValveなどはAIに推測させません。">只勾选简历中已经有依据的内容；更细的 PLC、PVD、Pump、Valve 等不要让 AI 自动推断。</p>
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="core_skills" value="startup" checked><span data-zh="设备启动 / 立上げ" data-ja="設備立上げ">设备启动 / 立上げ</span></label>
+          <label class="check"><input type="checkbox" name="core_skills" value="assembly" checked><span data-zh="组装 / 据付" data-ja="組立・据付">组装 / 据付</span></label>
+          <label class="check"><input type="checkbox" name="core_skills" value="adjustment" checked><span data-zh="调整 / 试运行" data-ja="調整・試運転">调整 / 试运行</span></label>
+          <label class="check"><input type="checkbox" name="core_skills" value="troubleshooting" checked><span data-zh="故障诊断 / 部件维修" data-ja="故障診断・部品修理">故障诊断 / 部件维修</span></label>
+          <label class="check"><input type="checkbox" name="core_skills" value="line" checked><span data-zh="生产线联动测试" data-ja="生産ライン連動試験">生产线联动测试</span></label>
+          <label class="check"><input type="checkbox" name="core_skills" value="instruction" checked><span data-zh="协力公司指导 / 现场管理" data-ja="協力会社指導・現場管理">协力公司指导 / 现场管理</span></label>
         </div>
-        <div class="field" data-field="agent_rules" data-label-zh="Agent 硬规则" data-label-ja="Agentの必須ルール" style="margin-top:16px"><label><span data-zh="Agent 硬规则" data-ja="Agentの必須ルール">Agent 硬规则</span></label><div class="rule-list">
-          <label class="check"><input type="checkbox" name="agent_rules" value="no_guess" checked><span data-zh="缺少答案时 STOP，不猜" data-ja="回答がなければSTOPし、推測しない">缺少答案时 STOP，不猜</span></label>
-          <label class="check"><input type="checkbox" name="agent_rules" value="human_review" checked><span data-zh="Submit 前人工审核公司、职位、薪资、地点、签证、附件" data-ja="Submit前に会社・職種・給与・勤務地・ビザ・添付を人が確認">Submit 前人工审核公司、职位、薪资、地点、签证、附件</span></label>
-          <label class="check"><input type="checkbox" name="agent_rules" value="dedupe" checked><span data-zh="相同 Job URL / Req ID 已投则跳过" data-ja="同じJob URL / Req IDは応募済みならSkip">相同 Job URL / Req ID 已投则跳过</span></label>
-          <label class="check"><input type="checkbox" name="agent_rules" value="draft_only" checked><span data-zh="先生成 Application Draft，再进入填写阶段" data-ja="Application Draftを作成してから入力へ進む">先生成 Application Draft，再进入填写阶段</span></label>
-        </div></div>
+        <div class="field full" data-field="technical_keywords" data-label-zh="本人确认的技术关键词" data-label-ja="本人確認済み技術キーワード" style="margin-top:14px"><label><span data-zh="本人确认的技术关键词" data-ja="本人確認済み技術キーワード">本人确认的技术关键词</span><em data-zh="一行即可" data-ja="1行で可">一行即可</em></label><textarea name="technical_keywords" class="handwrite" placeholder="例如：机械图纸、I/O Check、真空 Pump / Valve、CAD；不会的不要写。"></textarea></div>
+      </section>
+
+      <section class="section" data-section-title-zh="三个项目只补一件事" data-section-title-ja="3つのプロジェクトに1点ずつ補足">
+        <div class="section-title"><h2 data-zh="三个项目只补一件事" data-ja="3つのプロジェクトに1点ずつ補足">三个项目只补一件事</h2><span class="num">04</span></div>
+        <p class="desc" data-zh="已有内容全部预填。每个项目只需要补充：规模 / 典型故障 / 最终结果。不会的留空。" data-ja="既存内容は入力済みです。各プロジェクトで規模・代表的な不具合・結果だけ補足してください。不明なら空欄で構いません。">已有内容全部预填。每个项目只需要补充：规模 / 典型故障 / 最终结果。不会的留空。</p>
+        <article class="project"><div class="project-head"><h3 data-zh="JSW 锂电池薄膜设备" data-ja="JSW リチウム電池フィルム設備">JSW 锂电池薄膜设备</h3><span class="project-index">PROJECT 01</span></div><div class="fields">
+          <div class="field" data-field="jsw_period" data-label-zh="时间" data-label-ja="期間"><label><span data-zh="时间" data-ja="期間">时间</span></label><input name="jsw_period" value="2022.01–2024.03"></div>
+          <div class="field" data-field="jsw_equipment" data-label-zh="设备 / 职责" data-label-ja="設備・担当"><label><span data-zh="设备 / 职责" data-ja="設備・担当">设备 / 职责</span></label><input name="jsw_equipment" value="据付、メカラン、試運転、整线联动、现场管理"></div>
+          <div class="field full" data-field="jsw_extra" data-label-zh="规模 / 故障 / 结果" data-label-ja="規模・不具合・結果"><label><span data-zh="规模 / 故障 / 结果" data-ja="規模・不具合・結果">规模 / 故障 / 结果</span></label><textarea name="jsw_extra" class="handwrite" placeholder="例如：几台设备、几名协力人员、解决了什么故障、是否完成验收"></textarea></div>
+        </div></article>
+        <article class="project"><div class="project-head"><h3 data-zh="ULVAC 真空蒸镀装置" data-ja="ULVAC 真空蒸着装置">ULVAC 真空蒸镀装置</h3><span class="project-index">PROJECT 02</span></div><div class="fields">
+          <div class="field" data-field="ulvac_period" data-label-zh="时间" data-label-ja="期間"><label><span data-zh="时间" data-ja="期間">时间</span></label><input name="ulvac_period" value="2024.02–2025.01"></div>
+          <div class="field" data-field="ulvac_equipment" data-label-zh="设备 / 职责" data-label-ja="設備・担当"><label><span data-zh="设备 / 职责" data-ja="設備・担当">设备 / 职责</span></label><input name="ulvac_equipment" value="真空蒸镀装置组装、解体、移设、据付、调整、检查"></div>
+          <div class="field full" data-field="ulvac_extra" data-label-zh="型号 / 真空技能 / 结果" data-label-ja="型式・真空スキル・結果"><label><span data-zh="型号 / 真空技能 / 结果" data-ja="型式・真空スキル・結果">型号 / 真空技能 / 结果</span></label><textarea name="ulvac_extra" class="handwrite" placeholder="例如：PVD、Pump、Valve、配线、I/O Check；具体型号或典型故障"></textarea></div>
+        </div></article>
+        <article class="project"><div class="project-head"><h3 data-zh="Canon 露光装置 / Hirano 涂布设备" data-ja="Canon 露光装置 / Hirano 塗工設備">Canon 露光装置 / Hirano 涂布设备</h3><span class="project-index">PROJECT 03</span></div><div class="fields">
+          <div class="field" data-field="canon_hirano_period" data-label-zh="时间" data-label-ja="期間"><label><span data-zh="时间" data-ja="期間">时间</span></label><input name="canon_hirano_period" value="Canon 2021.09–2022.01；Hirano 2025.01–现在"></div>
+          <div class="field" data-field="canon_hirano_equipment" data-label-zh="设备 / 已知工作" data-label-ja="設備・確認済み業務"><label><span data-zh="设备 / 已知工作" data-ja="設備・確認済み業務">设备 / 已知工作</span></label><input name="canon_hirano_equipment" value="露光装置搬入・据付；涂布设备组装・调整・试运行"></div>
+          <div class="field full" data-field="canon_hirano_extra" data-label-zh="模块 / 精度调整 / 结果" data-label-ja="モジュール・精度調整・結果"><label><span data-zh="模块 / 精度调整 / 结果" data-ja="モジュール・精度調整・結果">模块 / 精度调整 / 结果</span></label><textarea name="canon_hirano_extra" class="handwrite" placeholder="例如：露光机型号、Leveling / Alignment、洁净室时长、设备台数、故障或交付结果"></textarea></div>
+        </div></article>
+        <div class="note" data-zh="长虹维修经历和其他工作经历已经写入现有履历，本页不再要求重复填写。" data-ja="長虹の修理経験とその他の職歴は既存の応募書類に反映済みのため、このフォームでは再入力不要です。">长虹维修经历和其他工作经历已经写入现有履历，本页不再要求重复填写。</div>
+      </section>
+
+      <section class="section" data-section-title-zh="投递设置" data-section-title-ja="応募設定">
+        <div class="section-title"><h2 data-zh="投递设置" data-ja="応募設定">投递设置</h2><span class="num">05</span></div>
+        <p class="desc" data-zh="先从前三家跑通；每次提交前保留人工确认。" data-ja="まず3社で検証し、各Submit前に人が確認します。">先从前三家跑通；每次提交前保留人工确认。</p>
+        <div class="field" data-field="target_companies" data-label-zh="第一波目标公司" data-label-ja="第一弾の対象会社"><label><span data-zh="第一波目标公司" data-ja="第一弾の対象会社">第一波目标公司</span></label><div class="checks"><label class="check"><input type="checkbox" name="target_companies" value="Crest" checked><span>Crest</span></label><label class="check"><input type="checkbox" name="target_companies" value="BREXA" checked><span>BREXA</span></label><label class="check"><input type="checkbox" name="target_companies" value="KOKUSAI" checked><span>KOKUSAI</span></label><label class="check"><input type="checkbox" name="target_companies" value="other"><span data-zh="其他" data-ja="その他">其他</span></label></div></div>
+        <div class="field" data-field="agent_rules" data-label-zh="Agent 规则" data-label-ja="Agentルール" style="margin-top:13px"><label><span data-zh="Agent 规则" data-ja="Agentルール">Agent 规则</span></label><div class="checks"><label class="check"><input type="checkbox" name="agent_rules" value="no_guess" checked><span data-zh="缺答案就 STOP，不猜" data-ja="回答がなければSTOP、推測しない">缺答案就 STOP，不猜</span></label><label class="check"><input type="checkbox" name="agent_rules" value="human_review" checked><span data-zh="Submit 前人工确认" data-ja="Submit前に人が確認">Submit 前人工确认</span></label><label class="check"><input type="checkbox" name="agent_rules" value="dedupe" checked><span data-zh="相同岗位不重复投" data-ja="同じ求人は重複応募しない">相同岗位不重复投</span></label></div></div>
       </section>
     </form>
 
-    <div class="actions">
-      <span id="status" role="status" aria-live="polite"></span>
-      <div class="action-group">
-        <button type="button" id="printBtn" data-zh="打印 / 保存 PDF" data-ja="印刷 / PDF保存">打印 / 保存 PDF</button>
-        <button type="button" id="yamlBtn" class="primary" data-zh="导出 candidate.yaml" data-ja="candidate.yaml出力">导出 candidate.yaml</button>
-        <button type="button" id="jsonBtn" class="primary" data-zh="导出 JSON" data-ja="JSON出力">导出 JSON</button>
-        <button type="button" id="markdownBtn" class="primary" data-zh="导出 Markdown" data-ja="Markdown出力">导出 Markdown</button>
-        <button type="button" id="clearBtn" class="danger" data-zh="清除本机草稿" data-ja="下書きを消去">清除本机草稿</button>
-      </div>
-    </div>
-
-    <footer data-zh="本页为资料收集工具，不替代正式履历书。提交前请由本人核对所有事实。" data-ja="本フォームは情報整理用です。提出前に本人がすべての事実を確認してください。">本页为资料收集工具，不替代正式履历书。提交前请由本人核对所有事实。</footer>
+    <div class="actions"><span id="status" role="status" aria-live="polite"></span><div class="action-group"><button type="button" id="printBtn" data-zh="打印 / PDF" data-ja="印刷 / PDF">打印 / PDF</button><button type="button" id="yamlBtn" class="primary" data-zh="导出 candidate.yaml" data-ja="candidate.yaml出力">导出 candidate.yaml</button><button type="button" id="jsonBtn" class="primary" data-zh="JSON" data-ja="JSON">JSON</button><button type="button" id="markdownBtn" class="primary" data-zh="Markdown" data-ja="Markdown">Markdown</button><button type="button" id="clearBtn" class="danger" data-zh="清除草稿" data-ja="下書きを消去">清除草稿</button></div></div>
+    <footer data-zh="只需填写空白项；本页不连接数据库，内容仅保存在当前浏览器。" data-ja="空欄だけ入力してください。データベースには接続せず、このブラウザにのみ保存します。">只需填写空白项；本页不连接数据库，内容仅保存在当前浏览器。</footer>
   </div>
-
   <script>
     (() => {
-      const STORAGE_KEY = "yangxiao-resume-intake-v1";
+      const KEY = "yangxiao-resume-intake-v2";
       const form = document.getElementById("intakeForm");
       const status = document.getElementById("status");
-      const progressBar = document.getElementById("progressBar");
-      const progressText = document.getElementById("progressText");
-      let language = localStorage.getItem(STORAGE_KEY + ":language") || "zh";
-
-      const labels = (node) => node?.dataset[language === "zh" ? "labelZh" : "labelJa"] || node?.dataset.field || "";
       const fieldNodes = () => [...form.querySelectorAll(".field[data-field]")];
       const controlsFor = (field) => [...form.querySelectorAll(`[name="${CSS.escape(field.dataset.field)}"]`)];
-      const fieldValue = (field) => {
-        const controls = controlsFor(field);
-        if (controls[0]?.type === "checkbox") return controls.filter((control) => control.checked).map((control) => control.value);
-        return controls[0]?.value || "";
-      };
-      const hasValue = (value) => Array.isArray(value) ? value.length > 0 : String(value || "").trim().length > 0;
+      const valueOf = (field) => { const controls = controlsFor(field); if (controls[0]?.type === "checkbox") return controls.filter((c) => c.checked).map((c) => c.value); return controls[0]?.value || ""; };
+      const filled = (value) => Array.isArray(value) ? value.length > 0 : String(value || "").trim().length > 0;
+      let language = localStorage.getItem(KEY + ":language") || "zh";
 
       function applyLanguage(next) {
-        language = next;
-        localStorage.setItem(STORAGE_KEY + ":language", language);
-        document.documentElement.lang = language === "zh" ? "zh-CN" : "ja";
-        document.querySelectorAll("[data-zh][data-ja]").forEach((node) => {
-          node.textContent = language === "zh" ? node.dataset.zh : node.dataset.ja;
-        });
-        document.querySelectorAll("[data-placeholder-zh][data-placeholder-ja]").forEach((node) => {
-          node.placeholder = language === "zh" ? node.dataset.placeholderZh : node.dataset.placeholderJa;
-        });
-        document.querySelectorAll("option[data-zh][data-ja]").forEach((node) => {
-          node.textContent = language === "zh" ? node.dataset.zh : node.dataset.ja;
-        });
+        language = next; localStorage.setItem(KEY + ":language", language); document.documentElement.lang = language === "zh" ? "zh-CN" : "ja";
+        document.querySelectorAll("[data-zh][data-ja]").forEach((node) => { node.textContent = language === "zh" ? node.dataset.zh : node.dataset.ja; });
         document.querySelectorAll("[data-lang]").forEach((button) => button.classList.toggle("active", button.dataset.lang === language));
         updateProgress();
       }
+      function snapshot() { const values = {}; fieldNodes().forEach((field) => { values[field.dataset.field] = valueOf(field); }); return { savedAt: new Date().toISOString(), language, values }; }
+      function save() { localStorage.setItem(KEY, JSON.stringify(snapshot())); updateProgress(); showStatus(language === "zh" ? "已保存到当前浏览器" : "このブラウザに保存しました"); }
+      function restore() { let saved; try { saved = JSON.parse(localStorage.getItem(KEY) || "null"); } catch { saved = null; } if (!saved?.values) return; Object.entries(saved.values).forEach(([name, value]) => { const controls = [...form.querySelectorAll(`[name="${CSS.escape(name)}"]`)]; if (controls[0]?.type === "checkbox") controls.forEach((c) => { c.checked = Array.isArray(value) && value.includes(c.value); }); else if (controls[0]) controls[0].value = value; }); }
+      function updateProgress() { const fields = fieldNodes(); const done = fields.filter((field) => filled(valueOf(field))).length; const percent = fields.length ? Math.round(done / fields.length * 100) : 0; document.getElementById("progressBar").style.width = percent + "%"; document.getElementById("progressText").textContent = percent + "%"; }
+      function showStatus(message) { status.textContent = message; clearTimeout(showStatus.timer); showStatus.timer = setTimeout(() => { status.textContent = ""; }, 3000); }
+      function download(filename, content, type) { const url = URL.createObjectURL(new Blob([content], { type })); const link = document.createElement("a"); link.href = url; link.download = filename; link.click(); setTimeout(() => URL.revokeObjectURL(url), 800); }
+      function labelOf(field) { return field.dataset[language === "zh" ? "labelZh" : "labelJa"] || field.dataset.field; }
+      function displayOf(field) { const controls = controlsFor(field); if (controls[0]?.type === "checkbox") return controls.filter((c) => c.checked).map((c) => c.nextElementSibling?.textContent.trim() || c.value).join("、"); if (controls[0]?.tagName === "SELECT") return controls[0].selectedOptions[0]?.textContent || ""; return controls[0]?.value || ""; }
+      function exportMarkdown() { const lines = [`# ${language === "zh" ? "杨霄｜日本求职资料确认" : "楊霄｜日本応募書類 確認"}`, "", `- ${language === "zh" ? "导出时间" : "出力日時"}：${new Date().toLocaleString()}`, ""]; document.querySelectorAll(".section").forEach((section) => { lines.push(`## ${section.dataset[language === "zh" ? "sectionTitleZh" : "sectionTitleJa"]}`, ""); section.querySelectorAll(".field[data-field]").forEach((field) => lines.push(`- **${labelOf(field)}**：${displayOf(field) || "—"}`)); lines.push(""); }); download("yangxiao-resume-intake.md", lines.join("\n"), "text/markdown;charset=utf-8"); showStatus(language === "zh" ? "Markdown 已导出" : "Markdownを出力しました"); }
+      function exportJson() { download("yangxiao-resume-intake.json", JSON.stringify(snapshot(), null, 2), "application/json;charset=utf-8"); showStatus(language === "zh" ? "JSON 已导出" : "JSONを出力しました"); }
+      function exportYaml() { const data = snapshot(); const lines = ["# Candidate facts from the lightweight intake form", `generated_at: ${JSON.stringify(data.savedAt)}`, `language: ${JSON.stringify(language)}`, "candidate:"]; Object.entries(data.values).forEach(([key, value]) => { if (Array.isArray(value)) { lines.push(`  ${JSON.stringify(key)}:`); value.forEach((item) => lines.push(`    - ${JSON.stringify(item)}`)); } else lines.push(`  ${JSON.stringify(key)}: ${JSON.stringify(value || "")}`); }); download("candidate.yaml", lines.join("\n") + "\n", "text/yaml;charset=utf-8"); showStatus(language === "zh" ? "candidate.yaml 已导出" : "candidate.yamlを出力しました"); }
 
-      function snapshot() {
-        const values = {};
-        fieldNodes().forEach((field) => { values[field.dataset.field] = fieldValue(field); });
-        return { savedAt: new Date().toISOString(), language, values };
-      }
-
-      function save() {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot()));
-        updateProgress();
-        showStatus(language === "zh" ? "已保存到当前浏览器" : "このブラウザに保存しました");
-      }
-
-      function restore() {
-        let saved;
-        try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch { saved = null; }
-        if (!saved?.values) return;
-        Object.entries(saved.values).forEach(([name, value]) => {
-          const controls = [...form.querySelectorAll(`[name="${CSS.escape(name)}"]`)];
-          if (controls[0]?.type === "checkbox") {
-            controls.forEach((control) => { control.checked = Array.isArray(value) && value.includes(control.value); });
-          } else if (controls[0]) controls[0].value = value;
-        });
-      }
-
-      function updateProgress() {
-        const fields = fieldNodes();
-        const complete = fields.filter((field) => hasValue(fieldValue(field))).length;
-        const percent = fields.length ? Math.round((complete / fields.length) * 100) : 0;
-        progressBar.style.width = percent + "%";
-        progressText.textContent = percent + "%";
-      }
-
-      function showStatus(message) {
-        status.textContent = message;
-        clearTimeout(showStatus.timer);
-        showStatus.timer = setTimeout(() => { status.textContent = ""; }, 3200);
-      }
-
-      function download(filename, content, type) {
-        const blob = new Blob([content], { type });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = filename;
-        link.click();
-        setTimeout(() => URL.revokeObjectURL(url), 1000);
-      }
-
-      function selectedText(control) {
-        if (control?.tagName !== "SELECT") return control?.value || "";
-        return control.selectedOptions[0]?.textContent || "";
-      }
-
-      function displayValue(field) {
-        const controls = controlsFor(field);
-        if (controls[0]?.type === "checkbox") {
-          return controls.filter((control) => control.checked).map((control) => control.nextElementSibling?.textContent.trim() || control.value).join("、");
-        }
-        return selectedText(controls[0]);
-      }
-
-      function exportMarkdown() {
-        const title = language === "zh" ? "杨霄｜日本求职资料补充" : "楊霄｜日本応募書類 情報補足";
-        const lines = [`# ${title}`, "", language === "zh" ? `导出时间：${new Date().toLocaleString("zh-CN")}` : `出力日時：${new Date().toLocaleString("ja-JP")}`, ""];
-        document.querySelectorAll(".form-section").forEach((section) => {
-          const heading = section.dataset[language === "zh" ? "sectionTitleZh" : "sectionTitleJa"];
-          lines.push(`## ${heading}`, "");
-          section.querySelectorAll(".field[data-field]").forEach((field) => {
-            lines.push(`- **${labels(field)}**：${displayValue(field) || "—"}`);
-          });
-          lines.push("");
-        });
-        download("yangxiao-resume-intake.md", lines.join("\n"), "text/markdown;charset=utf-8");
-        showStatus(language === "zh" ? "Markdown 已导出" : "Markdownを出力しました");
-      }
-
-      function exportJson() {
-        download("yangxiao-resume-intake.json", JSON.stringify(snapshot(), null, 2), "application/json;charset=utf-8");
-        showStatus(language === "zh" ? "JSON 已导出" : "JSONを出力しました");
-      }
-
-      function exportYaml() {
-        const { savedAt, values } = snapshot();
-        const lines = ["# Candidate facts collected from the resume intake form", `generated_at: ${JSON.stringify(savedAt)}`, `language: ${JSON.stringify(language)}`, "candidate:"];
-        Object.entries(values).forEach(([key, value]) => {
-          if (Array.isArray(value)) {
-            lines.push(`  ${JSON.stringify(key)}:`);
-            value.forEach((item) => lines.push(`    - ${JSON.stringify(item)}`));
-          } else {
-            lines.push(`  ${JSON.stringify(key)}: ${JSON.stringify(value || "")}`);
-          }
-        });
-        download("candidate.yaml", lines.join("\n") + "\n", "text/yaml;charset=utf-8");
-        showStatus(language === "zh" ? "candidate.yaml 已导出" : "candidate.yamlを出力しました");
-      }
-
-      form.addEventListener("input", save);
-      form.addEventListener("change", save);
-      document.querySelectorAll("[data-lang]").forEach((button) => button.addEventListener("click", () => applyLanguage(button.dataset.lang)));
-      document.getElementById("printBtn").addEventListener("click", () => window.print());
-      document.getElementById("yamlBtn").addEventListener("click", exportYaml);
-      document.getElementById("jsonBtn").addEventListener("click", exportJson);
-      document.getElementById("markdownBtn").addEventListener("click", exportMarkdown);
-      document.getElementById("clearBtn").addEventListener("click", () => {
-        const message = language === "zh" ? "确定清除当前浏览器中的草稿吗？" : "このブラウザの下書きを消去しますか？";
-        if (!window.confirm(message)) return;
-        form.reset();
-        localStorage.removeItem(STORAGE_KEY);
-        updateProgress();
-        showStatus(language === "zh" ? "草稿已清除" : "下書きを消去しました");
-      });
-      restore();
-      applyLanguage(language);
+      form.addEventListener("input", save); form.addEventListener("change", save); document.querySelectorAll("[data-lang]").forEach((button) => button.addEventListener("click", () => applyLanguage(button.dataset.lang)));
+      document.getElementById("printBtn").addEventListener("click", () => window.print()); document.getElementById("yamlBtn").addEventListener("click", exportYaml); document.getElementById("jsonBtn").addEventListener("click", exportJson); document.getElementById("markdownBtn").addEventListener("click", exportMarkdown);
+      document.getElementById("clearBtn").addEventListener("click", () => { if (!window.confirm(language === "zh" ? "确定清除草稿吗？" : "下書きを消去しますか？")) return; form.reset(); localStorage.removeItem(KEY); updateProgress(); showStatus(language === "zh" ? "草稿已清除" : "下書きを消去しました"); });
+      restore(); applyLanguage(language);
     })();
   </script>
 </body>
