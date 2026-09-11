@@ -55,10 +55,14 @@
 
       <section class="optional">
         <div class="title"><h2 data-zh="可选：项目细节补充" data-ja="任意：プロジェクト詳細の補足">可选：项目细节补充</h2><span class="number">02</span></div>
-        <p class="hint" data-zh="上一版的项目待补字段已恢复。基本经历不用重写，只填你记得的细节；不确定可以留空。" data-ja="前版のプロジェクト補足項目を復元しました。基本経歴は再入力不要で、覚えている詳細だけ入力。不明なら空欄で可。">上一版的项目待补字段已恢复。基本经历不用重写，只填你记得的细节；不确定可以留空。</p>
+        <p class="hint" data-zh="已按履历中的 5 段项目分别整理。每段只补一个最有价值的细节；不确定可以留空。" data-ja="履歴書にある5つのプロジェクトごとに整理しました。各案件は重要な詳細を1つ補足するだけ。不明なら空欄で可。">已按履历中的 5 段项目分别整理。每段只补一个最有价值的细节；不确定可以留空。</p>
         <div class="field" data-field="highlight" data-label-zh="项目 / 故障 / 结果（一两句话）" data-label-ja="プロジェクト・不具合・結果（1～2文）" style="margin-top:12px"><label><span data-zh="项目 / 故障 / 结果（一两句话）" data-ja="プロジェクト・不具合・結果（1～2文）">项目 / 故障 / 结果（一两句话）</span></label><textarea name="highlight" placeholder="例如：JSW 项目中负责整线联动测试，解决了某故障并完成客户验收。"></textarea></div>
         <details>
-          <summary data-zh="展开填写 3 个重点项目的待补细节" data-ja="3つの主要プロジェクトの補足を開く">展开填写 3 个重点项目的待补细节</summary>
+          <summary data-zh="展开填写 5 个项目的求职重点" data-ja="5つのプロジェクトの応募ポイントを開く">展开填写 5 个项目的求职重点</summary>
+          <article class="project-mini">
+            <h3 data-zh="Hirano｜涂布设备" data-ja="Hirano｜塗工設備">Hirano｜涂布设备</h3>
+            <div class="field" data-field="hirano_extra" data-label-zh="设备 / 调试职责 / 故障与结果" data-label-ja="設備・立上げ担当・不具合と結果"><label><span data-zh="设备 / 调试职责 / 故障与结果" data-ja="設備・立上げ担当・不具合と結果">设备 / 调试职责 / 故障与结果</span></label><textarea name="hirano_extra" placeholder="例如：设备或产线名称、负责组装/据付/调整/试运行中的哪些环节、解决过的故障及结果"></textarea></div>
+          </article>
           <article class="project-mini">
             <h3 data-zh="JSW｜锂电池薄膜制造设备" data-ja="JSW｜リチウム電池フィルム製造設備">JSW｜锂电池薄膜制造设备</h3>
             <div class="field" data-field="jsw_extra" data-label-zh="规模 / 协力人员 / 故障 / 结果" data-label-ja="規模・協力会社人数・不具合・結果"><label><span data-zh="规模 / 协力人员 / 故障 / 结果" data-ja="規模・協力会社人数・不具合・結果">规模 / 协力人员 / 故障 / 结果</span></label><textarea name="jsw_extra" placeholder="例如：几台设备、几名协力人员、解决了什么故障、是否完成客户验收"></textarea></div>
@@ -68,8 +72,12 @@
             <div class="field" data-field="ulvac_extra" data-label-zh="型号 / 真空相关经验 / 结果" data-label-ja="型式・真空関連スキル・結果"><label><span data-zh="型号 / 真空相关经验 / 结果" data-ja="型式・真空関連スキル・結果">型号 / 真空相关经验 / 结果</span></label><textarea name="ulvac_extra" placeholder="例如：设备型号、PVD、Pump、Valve、配线、I/O Check或典型故障"></textarea></div>
           </article>
           <article class="project-mini">
-            <h3 data-zh="Canon / Hirano｜露光与涂布设备" data-ja="Canon / Hirano｜露光・塗工設備">Canon / Hirano｜露光与涂布设备</h3>
-            <div class="field" data-field="canon_hirano_extra" data-label-zh="模块 / 精度调整 / 交付结果" data-label-ja="モジュール・精度調整・引渡し結果"><label><span data-zh="模块 / 精度调整 / 交付结果" data-ja="モジュール・精度調整・引渡し結果">模块 / 精度调整 / 交付结果</span></label><textarea name="canon_hirano_extra" placeholder="例如：露光机型号、Leveling / Alignment、洁净室时长、设备台数或交付结果"></textarea></div>
+            <h3 data-zh="Canon｜露光装置" data-ja="Canon｜露光装置">Canon｜露光装置</h3>
+            <div class="field" data-field="canon_hirano_extra" data-label-zh="模块 / 精度调整 / 交付结果" data-label-ja="モジュール・精度調整・引渡し結果"><label><span data-zh="模块 / 精度调整 / 交付结果" data-ja="モジュール・精度調整・引渡し結果">模块 / 精度调整 / 交付结果</span></label><textarea name="canon_hirano_extra" placeholder="例如：露光机型号、负责的模块、Leveling / Alignment、洁净室时长、设备台数或交付结果"></textarea></div>
+          </article>
+          <article class="project-mini">
+            <h3 data-zh="长虹｜家电售后与维修" data-ja="Changhong｜家電アフターサービス・修理">长虹｜家电售后与维修</h3>
+            <div class="field" data-field="changhong_extra" data-label-zh="故障诊断 / 工具与维修 / 结果" data-label-ja="故障診断・工具と修理・結果"><label><span data-zh="故障诊断 / 工具与维修 / 结果" data-ja="故障診断・工具と修理・結果">故障诊断 / 工具与维修 / 结果</span></label><textarea name="changhong_extra" placeholder="例如：典型故障、使用万用表/测试仪如何定位、电子元件或 BGA 如何处理、维修后的结果"></textarea></div>
           </article>
         </details>
       </section>
