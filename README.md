@@ -1,6 +1,6 @@
 # YangXiao Resume Intake
 
-Static, bilingual lightweight questionnaire for collecting only the facts needed to complete Yang Xiao's Japanese job-application documents.
+Static, bilingual quick-check form for collecting only the 6–8 facts that can change Yang Xiao's Japanese job-application decisions.
 
 ## Privacy model
 
